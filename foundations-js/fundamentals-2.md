@@ -115,6 +115,40 @@ text.split("|")    // Split on pipe
 text.split("")    // Split on individual characters
 ```
 
+---
+
+**Table of Some Common JavaScript String Method:**
+
+| Method | Parameters | Return Value |
+| ---- | -------- | -------------- |
+| `length` | N/A | The length of the string |
+|||
+| `replace()` | `searchValue`, `replaceValue` | A new string with all occurrences of `searchValue` replaced with `replaceValue` |
+|||
+| `replaceAll()` | `searchValue`, `replaceValue` | A new string with all occurrences of `searchValue` replaced with `replaceValue` (new in ECMAScript 2021) |
+|||
+| `toUpperCase()` | N/A | A new string with all characters converted to uppercase |
+|||
+| `toLowerCase()` | N/A | A new string with all characters converted to lowercase |
+|||
+| `concat()` | `string2`, `string3`, ... | A new string that concatenates the original string with one or more additional strings |
+|||
+| `trim()` | N/A | A new string with all whitespace removed from the beginning and end of the original string |
+|||
+| `trimStart()` | N/A | A new string with all whitespace removed from the beginning of the original string (new in ECMAScript 2021) |
+|||
+| `trimEnd()` | N/A | A new string with all whitespace removed from the end of the original string (new in ECMAScript 2021) |
+|||
+| `padStart()` | `targetLength`, `padString` | A new string with the original string padded with `padString` at the beginning to reach the specified `targetLength` |
+|||
+| `padEnd()` | `targetLength`, `padString` | A new string with the original string padded with `padString` at the end to reach the specified `targetLength` |
+|||
+| `charAt()` | `index` | The character at the specified `index` |
+|||
+| `charCodeAt()` | `index` | The Unicode value of the character at the specified `index` |
+|||
+| `split()` | `separator`, `limit` | An array of substrings created by splitting the original string at each occurrence of `separator` (or at most `limit` occurrences) |
+
 # [JavaScript String Reference](https://www.w3schools.com/jsref/jsref_obj_string.asp)
 
 **JavaScript, methods and properties are also available to strings, because JavaScript treats strings as objects**
