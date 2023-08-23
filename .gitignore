@@ -24,10 +24,10 @@ coverage
 *.lcov
 
 # Custom files to ignore
-/foundations-js/test.js
+/foundations-js/ignored
 /foundations-js/*.json
 /foundations-js/tempCodeRunnerFile.js
-/foundations-js/disable-float.tex
+
 
 # nyc test coverage
 .nyc_output
