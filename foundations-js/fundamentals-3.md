@@ -59,7 +59,7 @@ console.log(firstName || middleName || lastName || nickName || "Anonymous"); // 
 
 ***Important Note: I have studied this lesson topics (Fundamentals Part 3) from youtube videos not the links provided by The Odin Project***
 
-- How to define and invoke different kinds of functions.
+- How to define and invoke (a fancy word for run, or execute) different kinds of functions.
 - How to use the return value.
 - What function scope is.
 
@@ -377,3 +377,348 @@ console.log(d); // 2
 
 :::
 :::::
+
+In both examples we see that the scope of variables defined inside a function is only the function.
+
+In *example 1* if you comment the line `let b = 2;` inside the function you will get `b = 2`, also if you comment the line `var a = 10;` inside the function you will get `a = 1`.
+
+Functions have their own scope in JavaScript. Variables defined inside a function are not accessible from outside the function but variables defined outside a function are accessible from inside the function.
+
+Loops, if statements, and other blocks of code do not have their own scope. Variables defined inside a block of code are accessible from outside the block. This behavior depend on whether you used `var`, `let`, or `const` to define the variable`/`constant because `var` is function scoped but not block scoped but `let` and `const` are function and block scoped.
+
+::::: columns
+::: column
+
+*Example 1:*
+
+```{.js .numberLines}
+let a = 5;
+var b = 3;
+
+if (true) {
+  // This is a different variable than the 
+  // one defined before and if it wasn't you
+  // could have got an error because you
+  // can't redeclare a variable using `let`
+  let a = 50; 
+  // This overwrites the variable b
+  var b = 30; 
+  console.log(a); // 50
+  console.log(b); // 30
+}
+console.log(a); // 5
+console.log(b); // 30 not 3
+```
+
+:::
+::: column
+
+*Example 2:*
+
+```{.js .numberLines}
+// notice here a uses `var` and b uses `let` 
+var a = 5;
+let b = 3;
+
+if (true) {
+  console.log(a); // 5
+  console.log(b); // Cannot access 'b' before initialization
+  // This overwrites the variable a
+  var a = 50;
+  // This is a different variable than the one defined before
+  let b = 30; 
+}
+console.log(a); // 5
+console.log(b); // 30 not 3
+```
+
+:::
+:::::
+
+The `Cannot access 'b' before initialization` error happens because the `console.log()` has found a variable `b` in the block scope but it's not initialized yet so it throws an error. This part of the code is called the ***Temporal Dead Zone (TDZ)***.
+
+***Temporal Dead Zone (TDZ)*** is the area of block where a variable is inaccessible until the moment the computer completely initializes it with a value.
+
+<!-- Execution context -->
+<!-- Laxical Environment -->
+
+The last scope we are going to discuss is the ***Lexical Scope***. Since we can nest functions in JavaScript, functions can be defined inside other functions. The inner function can access the variables of the outer function but the outer function cannot access the variables of the inner function this is the ***Lexical Scope***.
+
+:::::{.columns .ragged}
+
+*Example 1:*
+
+```{.js .numberLines}
+function outer1(){
+  let a = 10;
+  function inner(){
+    console.log(a); // 10
+  }
+  inner();
+}
+
+outer1()
+```
+
+\columnbreak
+
+*Example 2:*
+
+```{.js .numberLines}
+function outer2(){
+  let a = 10;
+  function inner(){
+    let a = 100;
+    console.log(a); // 100
+  }
+  console.log(a); // 10
+  inner();
+}
+
+outer2()
+```
+
+:::::
+
+\pagebreak
+
+*Example 3:*
+
+```{.js .numberLines}
+function outer() {
+  let a = 10;
+  function inner() {
+    let a = 100;
+    let b = 20;
+    console.log(a); // 100
+  }
+  inner();
+  console.log(b); // Uncaught ReferenceError: b is not defined
+}
+
+outer();
+```
+
+# Some Notes From Articles
+
+- **[Read this JavaScript.info article](https://javascript.info/function-expressions) about function expressions the whole article is important and has many valuable information.**
+
+- Also Search for a YouTube video to explain **callback functions**.
+
+- The Last Thing is to read [this article](https://www.javascripttutorial.net/javascript-call-stack/#) about **call stack** and **execution context** in JavaScript.
+
+A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has the information on what function is currently being run and what functions are invoked from within that function…
+
+some of the code you are calling when you invoke a built in browser function couldn't be written in JavaScript - many of these functions are calling parts of the background browser code, which is written largely in low-level system languages like C++, not web languages like JavaScript.
+
+some built-in browser functions are not part of the core JavaScript language - some are defined as part of browser APIs, which build on top of the default language to provide even more functionality.
+
+**Functions** that are part of objects are called **methods**.
+
+Some functions require parameters to be specified when you are invoking them - these are values that need to be included inside the function parentheses, which it needs to do its job properly. Function **Parameters** are sometimes called **arguments**, **properties**, or even *attributes*.
+
+Take a look at [this exercise](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions#active_learning_playing_with_scope).
+
+Unlike python JavaScript doesn't return multiple values from a function but you can return a single array of multiple values.
+
+**Think about the idea of creating a function library. As you go further into your programming career, you'll start doing the same kinds of things over and over again. It is a good idea to create your own library of utility functions to do these sorts of things. You can copy them over to new code, or even just apply them to HTML pages wherever you need them.**
+
+A **parameter** is the variable listed inside the parentheses in the function declaration (it’s a declaration time term). An **argument** is the value that is passed to the function when it is called (it’s a call time term).
+
+We declare functions listing their parameters, then call them passing arguments.
+
+Function **parameters** are the items listed between the parentheses **in the function declaration**. Function **arguments** are the **actual values** we decide to pass to the function.
+
+A function parameter is just a **placeholder** for some future value
+
+::: {.columns columngap=2.5em column-rule="0pt solid black"}
+
+In this code We’re passing in a function call `favoriteAnimal('Goat')` as an argument in a different function call `log()`
+
+\columnbreak
+
+```{.js .numberLines}
+ function favoriteAnimal(animal) {
+   return animal + " is my favorite animal!"
+ }
+
+ console.log(favoriteAnimal('Goat'))
+```
+
+:::
+
+If a same-named variable is declared inside the function then it shadows the outer one. It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most variables reside in their functions. Sometimes though, they can be useful to store project-level data.
+
+::: {.columns .ragged columngap=2.5em column-rule="0pt solid black"}
+
+When the function is called in lines `*` and `**`, the given values are copied to local variables `from` and `text`. Then the function uses them.
+
+Here’s one more example: we have a variable `from` and pass it to the function. Please note: the function changes `from`, but the change is not seen outside, because a function always gets a copy of the value:
+
+\columnbreak
+
+```{.js .numberLines}
+function showMessage(from, text) {
+  from = '*' + from + '*'; // make "from" look nicer
+  alert( from + ': ' + text );
+}
+
+let from = "Ann";
+showMessage(from, "Hello"); // *Ann*: Hello
+// the value of "from" is the same, the function modified a local copy
+alert( from ); // Ann
+```
+
+:::
+
+---
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+When using default function parameters you can have complex expression that are the default value of the parameter, for example it can be a function call.
+
+\columnbreak
+
+```{.js .numberLines}
+function showMessage(from, text = anotherFunction()) {
+  // anotherFunction() only executed if no text given
+  // its result becomes the value of text
+}
+```
+
+:::
+
+---
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+If a function is called, but an argument is not provided, then the corresponding value becomes `undefined`.
+
+For instance, the aforementioned function `showMessage(from, text)` can be called with a single argument: `showMessage("Ann");`
+
+That’s not an error. Such a call would output `"*Ann*: undefined"`. As the value for text isn’t passed, it becomes undefined.
+
+\columnbreak
+
+We can specify the so-called “default” (to use if omitted) value for a parameter in the function declaration, using `=`
+
+```{.js .numberLines}
+function showMessage(from, text = "no text given") {
+  alert( from + ": " + text );
+}
+
+showMessage("Ann"); // Ann: no text given
+```
+
+:::
+
+---
+
+**Default parameters in old JavaScript code**
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+In older JS code people used to see a trick like this:
+
+```{.js .numberLines}
+function showMessage(from, text) {
+  if (text === undefined) {
+    text = 'no text given';
+  }
+
+  alert( from + ": " + text );
+}
+```
+
+\columnbreak
+
+They also used the or `||` operator
+
+```{.js .numberLines}
+function showMessage(from, text) {
+  // If the value of text is falsy, assign the default value
+  // this assumes that text == "" is the same as no text at all
+  text = text || 'no text given';
+  ...
+}
+```
+
+:::
+
+You can also use the *nullish coalescing operator* `??` operator like that `alert(count ?? "unknown");`.
+
+---
+
+Function return value can also be another function call.
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+**If a function does not return a value, it is the same as if it returns `undefined`**
+
+\columnbreak
+
+```{.js .numberLines}
+function doNothing() { /* empty */ }
+alert( doNothing() === undefined ); // true
+```
+
+:::
+
+---
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+Never add a newline between `return` and the value because JavaScript assumes a semicolon `;` after `return` So, it effectively becomes an empty `return`.
+
+you can use this workaround
+
+\columnbreak
+
+```{.js .numberLines}
+return (
+  some + long + expression
+  + or +
+  whatever * f(a) + f(b)
+  )
+```
+
+:::
+
+Functions are actions. So their name is usually a verb. It should be brief, as accurate as possible and describe what the function does, so that someone reading the code gets an indication of what the function does.
+
+It is a widespread practice to start a function with a verbal prefix which vaguely describes the action. There must be an agreement within the team on the meaning of the prefixes.
+
+For instance, functions that start with `show` usually show something.
+
+Function starting with…
+
+- `get…` – return a value,
+- `calc…` – calculate something,
+- `create…` – create something,
+- `check…` – check something and return a boolean, etc.
+
+```{.js .numberLines}
+showMessage(..)         // shows a message
+getAge(..)              // returns the age (gets it somehow)
+calcSum(..)             // calculates a sum and returns the result
+createForm(..)          // creates a form (and usually returns it)
+checkPermission(..)     // checks a permission, returns true/false
+```
+
+With prefixes in place, a glance at a function name gives an understanding what kind of work it does and what kind of value it returns.
+
+**One function – one action**
+
+A function should do exactly what is suggested by its name, no more.
+
+Two independent actions usually deserve two functions, even if they are usually called together (in that case we can make a 3rd function that calls those two).
+
+A few examples of breaking this rule:
+
+`checkPermission` – would be bad if it displays the `access granted/denied` message (should only perform the check and return the result).
+
+Functions that are used very often sometimes have **ultrashort names**. For example, the jQuery framework defines a function with `$`. The Lodash library has its core function named `_`.
+
+When we define a function and assign it to a variable it is called a **Function Expression**.
+
+In JavaScript you can assign a function to a variable and use that variable to call the function. Since you have that ability you can also assign one function to multiple variables and call it from any of them.
