@@ -505,13 +505,41 @@ outer();
 
 - Also Search for a YouTube video to explain **callback functions**.
 
-- The Last Thing is to read [this article](https://www.javascripttutorial.net/javascript-call-stack/#) about **call stack** and **execution context** in JavaScript.
+- The Last Thing is to read [this article](https://www.javascripttutorial.net/javascript-call-stack/#) about **call stack** and **execution contexts** (Global execution context & function execution contexts) in JavaScript.
+
+---
 
 A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has the information on what function is currently being run and what functions are invoked from within that function…
+
+Whenever a function is called, the JavaScript engine creates a function execution context for the function, pushes it on top of the call stack, and starts executing the function.
+
+When the JavaScript engine executes this script, it places the global execution context denoted by `main()` or `global()` function on the call stack.
+
+The call stack has a fixed size, depending on the implementation of the host environment, either the web browser or *Node.js*. If the number of execution contexts exceeds the size of the stack, a stack overflow error will occur.
+
+\begin{center}
+\textbf{\textit{Asynchronous JavaScript}}
+\end{center}
+
+**JavaScript is a single-threaded programming language**. This means that the **JavaScript engine has only one call stack**. Therefore, **it only can do one thing at a time**.
+
+When executing a script, the **JavaScript engine executes code from top to bottom**, line by line. In other words, it is **synchronous**.
+
+**Asynchronous** means the **JavaScript engine can execute other tasks while waiting for another task to be completed**. For example, the JavaScript engine can:
+
+1. Request for data from a remote server.
+2. Display a spinner
+3. When the data is available, display it on the webpage.
+
+To do this, the JavaScript engine uses an **event loop**.
+
+---
 
 some of the code you are calling when you invoke a built in browser function couldn't be written in JavaScript - many of these functions are calling parts of the background browser code, which is written largely in low-level system languages like C++, not web languages like JavaScript.
 
 some built-in browser functions are not part of the core JavaScript language - some are defined as part of browser APIs, which build on top of the default language to provide even more functionality.
+
+---
 
 **Functions** that are part of objects are called **methods**.
 
@@ -521,7 +549,11 @@ Take a look at [this exercise](https://developer.mozilla.org/en-US/docs/Learn/Ja
 
 Unlike python JavaScript doesn't return multiple values from a function but you can return a single array of multiple values.
 
+---
+
 **Think about the idea of creating a function library. As you go further into your programming career, you'll start doing the same kinds of things over and over again. It is a good idea to create your own library of utility functions to do these sorts of things. You can copy them over to new code, or even just apply them to HTML pages wherever you need them.**
+
+---
 
 A **parameter** is the variable listed inside the parentheses in the function declaration (it’s a declaration time term). An **argument** is the value that is passed to the function when it is called (it’s a call time term).
 
@@ -690,6 +722,8 @@ It is a widespread practice to start a function with a verbal prefix which vague
 
 For instance, functions that start with `show` usually show something.
 
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
 Function starting with…
 
 - `get…` – return a value,
@@ -697,13 +731,17 @@ Function starting with…
 - `create…` – create something,
 - `check…` – check something and return a boolean, etc.
 
+\columnbreak
+
 ```{.js .numberLines}
-showMessage(..)         // shows a message
-getAge(..)              // returns the age (gets it somehow)
-calcSum(..)             // calculates a sum and returns the result
-createForm(..)          // creates a form (and usually returns it)
-checkPermission(..)     // checks a permission, returns true/false
+showMessage(..) // shows a message
+getAge(..)  // returns the age (gets it somehow)
+calcSum(..) // calculates a sum and returns the result
+createForm(..)  // creates a form (and usually returns it)
+checkPermission(..) // checks a permission, returns true/false
 ```
+
+:::
 
 With prefixes in place, a glance at a function name gives an understanding what kind of work it does and what kind of value it returns.
 
