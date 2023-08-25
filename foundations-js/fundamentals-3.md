@@ -65,6 +65,8 @@ console.log(firstName || middleName || lastName || nickName || "Anonymous"); // 
 
 In JavaScript, when defining a function, you don't have to write `let` before function parameters because function parameters are treated as variables within the function's scope. Therefore, they don't need to be declared with `let`, `const`, or `var`.
 
+Functions apply a principle called the **DRY** principle, which stands for **Don't Repeat Yourself**. That is if you find yourself writing the same code over and over again, you should consider putting that code into a function.
+
 ## Function Rest Parameter `...`
 
 To accept any number of parameters in a function in JavaScript you can use the rest parameter `...` before the parameter name but you should take care of the following:
@@ -760,3 +762,38 @@ Functions that are used very often sometimes have **ultrashort names**. For exam
 When we define a function and assign it to a variable it is called a **Function Expression**.
 
 In JavaScript you can assign a function to a variable and use that variable to call the function. Since you have that ability you can also assign one function to multiple variables and call it from any of them.
+
+## Important Exercise
+
+Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+
+**Strings are immutable**
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+```{.js .numberLines}
+function capitalize(str) {
+ str0 = str[0];
+ console.log(str0); // m
+ strcap = str[0].toUpperCase();
+ console.log(strcap); // M
+ str[0] = str[0].toUpperCase();
+ return str;
+}
+
+// Stays "mohamed" not "Mohamed" because strings are immutable so you have to create a new string
+console.log(capitalize("mohamed")); // mohamed
+```
+
+\columnbreak
+
+```{.js .numberLines}
+function capitalize(str) {
+ newStr = str[0].toUpperCase() + str.substring(1, str.length);
+ return newStr;
+}
+console.log(capitalize("mohamed")); // Mohamed
+
+```
+
+:::
