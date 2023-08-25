@@ -797,3 +797,19 @@ console.log(capitalize("mohamed")); // Mohamed
 ```
 
 :::
+
+---
+
+***Knowledge check questions:***
+
+- What are functions useful for?
+- How do you invoke a function?
+- What are anonymous functions?
+- What is function scope?
+- What are return values?
+- What are arrow functions?
+
+***Extra content:***
+
+- [What’s the difference between using “let” and “var”? - stackoverflow](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var#:~:text=The%20main%20difference%20is%20scoping,(hence%20the%20block%20scope))
+- [How JavaScript Code is executed?](https://youtu.be/iLWTnMzWtj4)
