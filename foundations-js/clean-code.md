@@ -267,3 +267,29 @@ Writing good, meaningful comments is hard. It's as much an art as writing the co
 As Sammy Larbi said in [Common Excuses Used To Comment Code](http://www.codeodor.com/index.cfm/2008/6/18/Common-Excuses-Used-To-Comment-Code-and-What-To-Do-About-Them/2293?ref=blog.codinghorror.com):
 
 > *if you feel your code is too complex to understand without comments, your code is probably just bad. Rewrite it until it doesn't need comments any more. If, at the end of that effort, you still feel comments are necessary, then by all means, add comments … carefully.*
+
+## [Code Tells You How, Comments Tell You Why](https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/)
+
+You should first strive to make your code as simple as possible to understand without relying on comments as a crutch. Only at the point where the code cannot be made easier to understand should you begin to add comments.
+
+It helps to keep your audience in mind when you're writing code.
+
+Knuth covers this idea in his classic 1984 essay on Literate Programming ([pdf](http://www.literateprogramming.com/knuthweb.pdf?ref=blog.codinghorror.com)):
+
+> *Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*
+>
+> *The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other.*
+
+Note that more comments does not mean more readable code. Sometimes fewer comments makes for more readable code. Especially if it forces you to use meaningful symbol names instead.
+
+No matter how simple, concise, and clear your code may end up being, it's impossible for code to be completely self-documenting. Comments can never be replaced by code alone. Just ask Jef Raskin:
+
+> *Code can't explain why the program is being written, and the rationale for choosing this or that method. Code cannot discuss the reasons certain alternative approaches were taken. For example:*
+
+> `/* A binary search turned out to be slower than the Boyer-Moore algorithm for the data sets of interest, thus we have used the more complex, but faster method even though this problem does not at first seem amenable to a string search technique. */`
+
+What is perfectly, transparently obvious to one developer may be utterly opaque to another developer who has no context. Consider [this bit of commenting advice](http://everything2.com/index.pl?node_id=1709851&displaytype=printable&ref=blog.codinghorror.com):
+
+> *You may very well know that `$string = join('',reverse(split('',$string)));`{.perl} reverses your string, but how hard is it to insert `# Reverse the string`{.perl} into your Perl file?*
+
+Indeed. It's not hard at all. Code can only tell you how the program works; comments can tell you why it works. **Try not to shortchange your fellow developers in either area**.
