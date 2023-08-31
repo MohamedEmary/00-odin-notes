@@ -196,7 +196,7 @@ indentation helps display the opening and closing points of each element used.
 
 ***4. Write Explanatory Comments***
 
-A good comment should tell **why not how**.
+A good comment should **tell why not how**.
 
 ***5. Avoid Abusing Comments***
 
@@ -251,3 +251,19 @@ And, of course, this way one can avoid dealing with [Internet Explorer’s limit
 ***To Sum Up***
 
 What’s convenient isn’t always what’s best for the development process, since finding the convenient way to do something tends to drive us towards disregarding coding efficiency. Implied in this case for efficiency, there is a high need to keep up with standards in order to maintain a code that’s readable in the future. Considering that it won’t always be the same person who works on upgrading the same application, code should be sufficiently open and understandable for it to really support team work.
+
+## [Coding Without Comments](https://blog.codinghorror.com/coding-without-comments/)
+
+While comments are neither inherently good or bad, they are frequently used as a crutch. You should **always write your code as if comments didn't exist**. This forces you to write your code in the simplest, plainest, most self-documenting way you can humanly come up with.
+
+When you can't possibly imagine any conceivable way your code could be changed to become more straightforward and obvious – then, and only then, should you feel compelled to add a comment explaining what your code does.
+
+> *Junior developers rely on comments to tell the story when they should be relying on the code to tell the story. Comments are narrative asides; important in their own way, but in no way meant to replace plot, characterization, and setting.*
+
+The secret of code comments: **to write good comments you have to be a good writer.** Comments aren't code meant for the compiler, they're words meant to communicate ideas to other human beings. Since effective communication with other human beings is not exactly our strong suit. So it's better to stick to our strengths – that is, writing for the compiler, in as clear a way as we possibly can, and reaching for the comments only as a method of last resort.
+
+Writing good, meaningful comments is hard. It's as much an art as writing the code itself.
+
+As Sammy Larbi said in [Common Excuses Used To Comment Code](http://www.codeodor.com/index.cfm/2008/6/18/Common-Excuses-Used-To-Comment-Code-and-What-To-Do-About-Them/2293?ref=blog.codinghorror.com):
+
+> *if you feel your code is too complex to understand without comments, your code is probably just bad. Rewrite it until it doesn't need comments any more. If, at the end of that effort, you still feel comments are necessary, then by all means, add comments … carefully.*
