@@ -156,3 +156,98 @@ Code formatters like prettier can take care of the line length issue.
 - Semicolons are mostly optional in JavaScript because the JS compiler **will automatically insert them** if they are omitted. This functionality CAN break in certain situations leading to bugs in your code so it is better to get used to adding semi-colons. *Again: consistency is the main thing.*
 
 - Comments Part has some great advices that I think it's better to [**READ FROM ODIN WEBSITE**](https://www.theodinproject.com/lessons/foundations-clean-code#about-comments).
+
+# Assignment Articles
+
+## [Ten Principles for Keeping Your Programming Code Clean](https://onextrapixel.com/10-principles-for-keeping-your-programming-code-clean/)
+
+***1. Revise Your Logic Before Coding***
+
+Before blindly typing into the debugger of choice, some **flow diagrams or written pseudo-code** might come in handy to previously verify the logic behind those lines of code. Writing it down first can clarify many doubts or insecurities about complex functionality, and therefore save a lot of time. But most importantly, helping you get it right faster will also help you avoid all the messy code replacements and additions that tamper with the following principles.
+
+***2. Clearly Expose the Structure of the Page***
+
+This is done by using main containers with a representative ID
+
+*Example:*
+
+```{.html .numberLines}
+<div id="main-container">
+  <div id="header">
+    <div id="logo">...</div>
+    <div id="main-menu">...</div>
+  </div>
+  <div id="content">
+    <div id="left-column">...</div>
+
+    <div id="center-column">...</div>
+    <div id="right-column">...</div>
+  </div>
+  <div id="footer">
+    <div id="footer-menu">...</div>
+    <div id="disclaimer">...</div>
+  </div>
+</div>
+```
+
+***3. Use the Correct Indentation***
+
+indentation helps display the opening and closing points of each element used.
+
+***4. Write Explanatory Comments***
+
+A good comment should tell **why not how**.
+
+***5. Avoid Abusing Comments***
+
+What comments are NOT made for is:
+
+- Writing explanatory notes to self (e.g. `/*Will finish this later…*/`).
+- Blaming stuff on other people (e.g. `/*John coded this. Ask him.*/`).
+- Writing vague statements (e.g. `/*This is another math function.*/`).
+
+If the code will be documented via embedded comments, the team members need to make sure those **comments are there for a reason.**
+
+Examples of good comment use are:
+
+- Authoring specifications (e.g. `/*Coded by John, November 13th 2010*/`).
+- Detailed statements on the functionality of a method or procedure (e.g. `/*This function validates the login form with the aid of the e-mail check function*/`).
+- Quick notifications or labels that state where a recent change was made (e.g. `/*Added e-mail validation procedure*/`).
+
+***6. Avoid Extremely Large Functions***
+
+In the process of adding functionality to an application, its coded methods tend to grow accordingly. One can come across functions that consist of up to a hundred lines of code, and this tends to become confusing.
+
+A better practice would be to **break up large functions into smaller ones**. This should have been avoided from the beginning if the first recommendation of **Revising Your Logic Before Coding** was carried out correctly.
+
+***7. Use Naming Standards for Functions and Variables***
+
+Whenever a variable or a function is created, its name should be **descriptive** enough as to give a general idea of what it does.
+
+There are companies that have their own pre-established naming standards (e.g. The prefix `int_` for any numeric variables).
+
+***8. Treat Changes with Caution***
+
+This mainly involves:
+
+- Keeping the correct indentations (e.g. when inserting an IF clause, its contents’ indentations will be augmented).
+- Commenting on the modification made or broadening the existing comments.
+- Respecting standards in use.
+
+***9. Avoid Indiscriminate Mixing of Coding Languages***
+
+Like using In-line CSS styling and scattered JavaScript tags with short procedures within them. This will result in huge element tags with an embedded STYLE property, lots of interruptions in the flow of the structure because of embedded functions, and of course lots and lots of confusion.
+
+Having the appropriate divisions between different coding languages will **give order to the logic applied**. This brings us, though, to the next consideration.
+
+***10. Summarize Your Imports***
+
+Even though it is much better to have additional coding languages imported from different files, this shouldn’t be abused. If there are too many style sheets, they can probably be summarized into one or two.
+
+This won’t only save space and make things look cleaner, but it will also save loading time. Each imported file is an HTTP request that tampers with the performance of your application. So apart from being a consideration for tidiness, it is also a consideration for efficiency.
+
+And, of course, this way one can avoid dealing with [Internet Explorer’s limit to the number of individual stylesheets](http://social.msdn.microsoft.com/Forums/en-US/iewebdevelopment/thread/ad1b6e88-bbfa-4cc4-9e95-3889b82a7c1d?prof=required).
+
+***To Sum Up***
+
+What’s convenient isn’t always what’s best for the development process, since finding the convenient way to do something tends to drive us towards disregarding coding efficiency. Implied in this case for efficiency, there is a high need to keep up with standards in order to maintain a code that’s readable in the future. Considering that it won’t always be the same person who works on upgrading the same application, code should be sufficiently open and understandable for it to really support team work.
