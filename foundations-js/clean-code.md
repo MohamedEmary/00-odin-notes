@@ -293,3 +293,9 @@ What is perfectly, transparently obvious to one developer may be utterly opaque 
 > *You may very well know that `$string = join('',reverse(split('',$string)));`{.perl} reverses your string, but how hard is it to insert `# Reverse the string`{.perl} into your Perl file?*
 
 Indeed. It's not hard at all. Code can only tell you how the program works; comments can tell you why it works. **Try not to shortchange your fellow developers in either area**.
+
+## Additional Content
+
+- [A nice op-ed](https://www.martinfowler.com/bliki/CodeAsDocumentation.html)
+- [Airbnb style guide](https://github.com/airbnb/javascript)
+- [Chaining methods to write sentences](https://web.archive.org/web/20190211152543/https%253A//javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/)
