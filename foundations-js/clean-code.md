@@ -294,8 +294,29 @@ What is perfectly, transparently obvious to one developer may be utterly opaque 
 
 Indeed. It's not hard at all. Code can only tell you how the program works; comments can tell you why it works. **Try not to shortchange your fellow developers in either area**.
 
+\pagebreak
+
 ## Additional Content
 
-- [A nice op-ed](https://www.martinfowler.com/bliki/CodeAsDocumentation.html)
-- [Airbnb style guide](https://github.com/airbnb/javascript)
-- [Chaining methods to write sentences](https://web.archive.org/web/20190211152543/https%253A//javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/)
+**1. [A nice op-ed](https://www.martinfowler.com/bliki/CodeAsDocumentation.html)**
+
+- Code is the primary documentation of a software system, as it is the most detailed and precise.
+- Code is not the only documentation, it should be supplemented by other forms when needed.
+- Most code bases are not very good documentation, but they can be improved.
+- It is possible to write clear code, and most code bases can be made much more clearer.
+- One reason for poor code quality is the lack of seriousness in treating code as documentation.
+- Programmers should put more effort into writing code that communicates well.
+
+**2. [Airbnb style guide](https://github.com/airbnb/javascript) - Good Reference**
+
+**3. [Chaining methods to write sentences](https://web.archive.org/web/20190211152543/https%253A//javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/)**
+<!-- - The article explains how to write **chainable** or **cascading** methods in JavaScript, which allow calling multiple methods on an object in one line of code.
+- The article provides examples of chainable methods in jQuery and native JavaScript methods, such as `array.sort().reverse().join()`.
+- The article shows how to create a custom object constructor function that can be used to instantiate new objects with chainable methods.
+- The article demonstrates how to add chainable methods to the custom object's prototype, using the `this` keyword to refer to the current object and return it at the end of each method.
+- The article also explains how to use **getters** and **setters** to access and modify the properties of the custom object without breaking the chain.
+- The article gives an example of a chainable method that accepts a callback function as an argument and executes it on the current object.
+- The article discusses the benefits of using chainable methods, such as improved readability, expressiveness, and performance.
+- The article also mentions some drawbacks of using chainable methods, such as increased complexity, potential errors, and difficulty in debugging.
+- The article suggests some best practices for writing chainable methods, such as using descriptive names, avoiding side effects, and documenting the code.
+- The article concludes by encouraging the reader to experiment with chainable methods and share their feedback. -->
