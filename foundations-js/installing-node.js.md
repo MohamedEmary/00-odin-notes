@@ -61,3 +61,7 @@ Node.js is a JavaScript runtime environment that allows you to run JavaScript ou
 **`npm`: Node Package Manager**
 
 Node provides an interactive console which lets you run and edit your javascript code right in your terminal
+
+---
+
+`nvm` only works in Linux and Mac OS but there is an alternative for Windows see [this](https://github.com/coreybutler/nvm-windows).
