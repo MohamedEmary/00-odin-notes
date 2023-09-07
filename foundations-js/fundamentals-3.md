@@ -813,3 +813,119 @@ console.log(capitalize("mohamed")); // Mohamed
 
 - [What’s the difference between using “let” and “var”? - stackoverflow](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var#:~:text=The%20main%20difference%20is%20scoping,(hence%20the%20block%20scope))
 - [How JavaScript Code is executed?](https://youtu.be/iLWTnMzWtj4)
+
+---
+
+# Higher Order Functions
+
+A higher order function in JavaScript is a function that accepts another function as a parameter and/or returns a function.
+
+## `map`
+
+`map` is an array method that **creates a new array** populated with the results of calling a provided function on every element in the calling array.
+
+The array returned by `map` will be the **same length** as the array passed in so you can't for example remove some elements from the array using `map`.
+
+Map function returns A New Array
+
+**Syntax**: `map(callBackFunction(Element, Index, Array) { }, thisArg)`
+
+- Element: The current element being processed in the array.
+- Index: The index of the current element being processed in the array. (**Optional**)
+- Array: The Current Array. (**Optional**)
+- thisArg: Value to use as `this` when executing callback. (**Optional**)
+
+---
+
+Side Note: To check if a variable is equal to `NaN` you can use the `isNaN()` function. Don't use `variable === NaN` because it will always return `false` because `NaN` is not equal to itself.
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+For example this code will never print `True` to the \linebreak console.
+
+\columnbreak
+
+```{.js .numberLines}
+if (Number("a") === Number("a")) {
+  console.log("True");
+}
+```
+
+:::
+
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+Instead This code prints:
+
+\columnbreak
+
+```{.js .numberLines}
+if (isNaN(Number("a")) === isNaN(Number("a"))) {
+  console.log("True");  // True
+}
+```
+
+:::
+
+---
+
+## `filter`
+
+`filter` is an array method that **creates a new array** with all elements that pass the test implemented by the provided function.
+
+The array returned by `filter` will have the **same** or **different length** than the array passed in based on the condition you provided.
+
+Filter function can't change the elements of the array it only returns the elements that pass the test.
+
+Filter function returns A New Array
+
+**Syntax**: `filter(callBackFunction(Element, Index, Array) { }, thisArg)`
+
+- Element: The current element being processed in the array.
+- Index: The index of the current element being processed in the array. (**Optional**)
+- Array: The Current Array. (**Optional**)
+- thisArg: Value to use as `this` when executing callback. (**Optional**)
+
+---
+
+## `reduce`
+
+`reduce` is an array method that **executes a reducer function** (that you provide) on each element of the array, resulting in a single output value.
+
+Syntax: `reduce(callBackFunction(accum, curVal, curValIndex, srcArr) { }, initialValue)`
+
+The reducer function takes four arguments:
+
+- Accumulator (`accum`): The accumulator accumulates the callback's return values; it is the accumulated value previously returned in the last invocation of the callback, or initialValue, if supplied (see below).
+- Current Value (`curVal`): The current element being processed in the array.
+- Current Value Index (`curValIndex`): The index of the current element being processed in the array. Starts at index 0, if an initialValue is provided, and at index 1 otherwise.
+- Source Array (`srcArr`): The array `reduce()` was called upon.
+- Initial Value (`initialValue`): A value to use as the first argument to the first call of the callback. **If no initialValue is supplied, the first element in the array will be used as the initial accumulator value** and skipped as currentValue. Calling `reduce()` on an empty array without an initialValue will throw an error.
+
+Your reducer function's returned value is assigned to the accumulator, whose value is remembered across each iteration throughout the array and ultimately becomes the final, single resulting value.
+
+---
+
+## `forEach`
+
+`forEach` is an array method that **executes a provided function once for each array element**.
+
+`forEach` function returns `undefined`. It doesn't return anything nor create a new array.
+
+**Syntax**: `forEach(callBackFunction(Element, Index, Array) { }, thisArg)`
+
+- Element: The current element being processed in the array.
+- Index: The index of the current element being processed in the array. (**Optional**)
+- Array: The Current Array. (**Optional**)
+- thisArg: Value to use as `this` when executing callback. (**Optional**)
+
+---
+
+**You may need to return to `forEach` again after learning about DOM.**
+
+**You may also need to try `thisArg` to know what is the different uses of it**
+
+[Solve this again](https://youtu.be/Wn-JbwQLAlA)
+
+---
+
