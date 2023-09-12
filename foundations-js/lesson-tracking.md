@@ -85,4 +85,4 @@ urlcolor: blue
 
 ## To be reviewed
 
-1. [Test Driven Development](https://www.theodinproject.com/lessons/foundations-fundamentals-part-4#test-driven-development)
+- [ ] [Test Driven Development](https://www.theodinproject.com/lessons/foundations-fundamentals-part-4#test-driven-development)
