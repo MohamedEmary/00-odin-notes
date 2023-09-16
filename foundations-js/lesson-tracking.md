@@ -79,10 +79,16 @@ urlcolor: blue
 ## Lessons I didn't fully understand yet
 
 1. [Flexbox Section](https://www.theodinproject.com/paths/foundations/courses/foundations#flexbox)
-2. [DOM Manipulation and Events](https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events)
+2. Two JavaScript 30 Videos in [DOM Manipulation and Events Lesson](https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events). [Video 1](https://www.youtube.com/watch?v=VuN8qwZoego), and [Video 2](https://www.youtube.com/watch?v=F1anRyL37lE)
 
 ---
 
 ## To be reviewed
 
 - [ ] [Test Driven Development](https://www.theodinproject.com/lessons/foundations-fundamentals-part-4#test-driven-development)
+
+---
+
+## Things I need to study later
+
+1. TypeScript
