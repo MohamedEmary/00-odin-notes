@@ -347,10 +347,17 @@ There are many events other than `click`{.js} some useful events include:
 3. `keydown`{.js}
 4. `keyup`{.js}
 
+# Watch Two Videos in *#JavaScript30* Playlist
+
+- [Make a JavaScript Drum Kit in Vanilla JS!](https://www.youtube.com/watch?v=VuN8qwZoego)
+- [JavaScript Event Capture, Propagation and Bubbling](https://www.youtube.com/watch?v=F1anRyL37lE)
+
+Watch the two videos especially [this video](https://www.youtube.com/watch?v=F1anRyL37lE) as it contains very valuable information.
+
 # References
 
 1. See DOM Enlightenment’s [section on CSS Style rules](https://domenlightenment.com/#6.2) for more info on inline styles.
 2. See MDN’s section on [HTML Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) for more info on available attributes.
-3. [Example](https://youtube.com/watch?v=ns1LX6mEvyM) of how `textContent`{.js} can lead to security risks.
+3. [Example](https://youtube.com/watch?v=ns1LX6mEvyM) of how `innerHTML`{.js} can lead to security risks.
 4. Explanation of callbacks can be found [HERE](https://dev.to/i3uckwheat/understanding-callbacks-2o9e).
 5. Complete list with explanations of each event on [this page](https://www.w3schools.com/jsref/dom_obj_event.asp).
