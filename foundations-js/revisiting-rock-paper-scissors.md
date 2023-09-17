@@ -23,11 +23,12 @@ When you make commits on a specific branch, those changes only exist on that bra
 ## Using Branches
 
 - make new branches by using the command `git branch <branch_name>`.
+- To push the new branch you created to your remote repo use the command `git push origin <branch_name>`
 - change to your new branch using `git checkout <branch_name>`.
 - create a new branch and change to it in a single command by using the `-b` flag with `checkout` `git checkout -b <branch_name>`.
 - You can see all of your current branches using `git branch` with no other arguments. The branch that you’re currently on will be indicated with an asterisk.
 - To change to main branch use `git checkout main`.
-- When you don’t need a branch anymore, it can be deleted using `git branch -d <branch_name>` if the branch has already been merged into `main`.
+- When you don’t need a branch anymore, it can be deleted using `git branch -d <branch_name>` if the branch has already been merged into `main`. **Before you delete a branch, you have to switch to another branch first**.
 - You can also use `git branch -D <branch_name>` to delete a branch that hasn’t been merged to `main` yet.
 
 Once you are done working on your feature branch and are ready to bring the commits that you’ve made on it to your main branch, you will need to perform what is known as a `merge`.
@@ -38,7 +39,7 @@ When you finish working on a branch you will usually want to delete branches whe
 
 You can see an example of a `develop` branch being created, committed to, and then merged to `main` in the diagram below.
 
-![Example of git branching](images/revisiting-rock-paper-scissors/1694962683012.png){width=450px}
+![Example of git branching](images/revisiting-rock-paper-scissors/git-branch.png){width=450px}
 
 Sometimes, the same lines in a file will have been changed by two different branches. When this happens, you will have a **merge conflict** when you try and merge those branches together. In order to finish merging the branches you will have to first resolve the conflict.
 
