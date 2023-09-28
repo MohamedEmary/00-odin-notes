@@ -27,6 +27,7 @@ When you make commits on a specific branch, those changes only exist on that bra
 - change to your new branch using `git checkout <branch_name>`.
 - create a new branch and change to it in a single command by using the `-b` flag with `checkout` `git checkout -b <branch_name>`.
 - You can see all of your current branches using `git branch` with no other arguments. The branch that you’re currently on will be indicated with an asterisk.
+- When you push from the branch you’d use `git push origin <branch_name>` instead of `git push origin main`
 - To change to main branch use `git checkout main`.
 - When you don’t need a branch anymore, it can be deleted using `git branch -d <branch_name>` if the branch has already been merged into `main`. **Before you delete a branch, you have to switch to another branch first**.
 - You can also use `git branch -D <branch_name>` to delete a branch that hasn’t been merged to `main` yet.
