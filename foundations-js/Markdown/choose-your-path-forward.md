@@ -17,6 +17,17 @@ After finishing foundations section of The Odin Project you should be able to:
 
 The aim of finishing The Odin Project is to be able to build a full-featured and scalable web application.
 
+# Learning Programming
+
+Learning how to program is much more than just learning a language. It’s:
+
+1. learning how to research and solve difficult problems
+2. building an engineering mindset
+3. working on complex problems and codebases
+4. communicating effectively with other developers
+
+Luckily, all these skills are transferrable to other languages and domains of software and because most languages are similar in concept and structure, **moving into a different language will be much easier** than learning your first.
+
 # Choose your path forward
 
 You can choose between two paths:
