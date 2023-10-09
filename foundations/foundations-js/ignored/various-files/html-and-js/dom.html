@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation</title>
+    <!-- <script src="script3.js" defer></script> -->
+  </head>
+  <body>
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <div id="container">
+      <button
+        id="button3"
+        onclick="alert('clicked from html')"
+        style="padding: 10px; font-weight: 900"
+      >
+        Button 3
+      </button>
+    </div>
+
+    <script>
+      const container = document.querySelector("#container");
+
+      const content = document.createElement("div");
+      content.classList.add("content");
+      content.textContent = "This is the glorious text-content!";
+
+      container.appendChild(content);
+
+      // =======================================================================
+
+      // Copy the example above into files on your own computer. To make it work you’ll need to supply the rest of the HTML skeleton and either link your JavaScript file, or put the JavaScript into a script tag on the page. Make sure everything is working before moving on!
+
+      // Add the following elements to the container using ONLY JavaScript and the DOM methods shown above.
+
+      // a <p> with red text that says “Hey I’m red!”
+      // an <h3> with blue text that says “I’m a blue h3!”
+      // a <div> with a black border and pink background color with the following elements inside of it:
+      // another <h1> that says “I’m in a div”
+      // a <p> that says “ME TOO!”
+      // Hint for this one: after creating the <div> with createElement, append the <h1> and <p> to it before adding it to the container.
+
+      const p = document.createElement("p");
+      p.textContent = "Hey I'm red!";
+      p.style.color = "red";
+      const h3 = document.createElement("h3");
+      h3.textContent = "I'm a blue h3!";
+      h3.style.color = "blue";
+      container.appendChild(h3);
+      container.appendChild(p);
+      const div = document.createElement("div");
+      div.style.cssText = "border: 2px solid black; background-color: pink";
+      const divh1 = document.createElement("h1");
+      divh1.textContent = "I'm in a div";
+      const divP = document.createElement("p");
+      divP.textContent = "ME TOO!";
+      div.appendChild(divh1);
+      div.appendChild(divP);
+      container.appendChild(div);
+      const button1 = document.createElement("button");
+      const button2 = document.createElement("button");
+      button1.onclick = () => alert("cliked from anonymous function");
+      button1.textContent = "Button 1";
+      button1.style.fontWeight = 900;
+      button1.style.padding = "10px";
+      container.appendChild(button1);
+      button2.addEventListener("click", () => {
+        alert("Clicked from addEventListener");
+      });
+      button2.textContent = "Button 2";
+      button2.style.fontWeight = 900;
+      button2.style.padding = "10px";
+      container.appendChild(button2);
+      const btn = document.getElementById("button3");
+      btn.addEventListener("click", function (e) {
+        e.target.style.backgroundColor = "red";
+      });
+    </script>
+  </body>
+</html>
