@@ -1,7 +1,5 @@
 ---
 title: \huge SVG
-subtitle: 
-abstract: 
 ---
 
 # What is SVG
