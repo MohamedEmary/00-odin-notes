@@ -47,7 +47,7 @@ You can also use caption to add captions to your table as in:
 
 > *Note: The summary attribute can also be used on the `<table>` element to provide a description — this is also read out by screen readers. We'd recommend using the `<caption>` element instead, however, as summary is deprecated and can't be read by sighted users (it doesn't appear on the page).*
 
-You can make your html table code semantic by using `<thead>`, `<tbody>` and `<tfoot>`. If you are using `<col>`, `<colgroup>` element, the table header should come just below those.
+You can make your HTML table code semantic by using `<thead>`, `<tbody>` and `<tfoot>`. If you are using `<col>`, `<colgroup>` element, the table header should come just below those.
 
 The browser adds `<tbody>` automatically if you don't add it. `<tbody>` also gives you more control over your table structure and styling.
 
