@@ -89,7 +89,7 @@ Screen readers will recognize markup structured like this, and allow their users
 
 `scope` has two more possible values — `colgroup` and `rowgroup`. These are used for headings that sit over the top of multiple columns or rows.
 
-![Items Sold in August Table](image/tables/items-sold-table.png)
+![Items Sold in August Table](image/tables/items-sold-table.png){width=450px}
 
 If you look back at the table above at the start of this section of the article, you'll see that the "Clothes" cell sits above the "Trousers", "Skirts", and "Dresses" cells. All of these cells should be marked up as headers (`<th>`), but "Clothes" is a heading that sits over the top and defines the other three subheadings. "Clothes" therefore should get an attribute of `scope="colgroup"`, whereas the others would get an attribute of `scope="col"`.
 
@@ -123,6 +123,6 @@ An alternative to using the `scope` attribute is to use `id` and `headers` attri
 </table>
 ```
 
-![How the table will look](image/tables/id-header-table.png)
+![How the table will look](image/tables/id-header-table.png){width=450px}
 
 > *Note: This method creates very precise associations between headers and data cells but it uses a lot more markup and does not leave any room for errors. The `scope` approach is usually enough for most tables.*
