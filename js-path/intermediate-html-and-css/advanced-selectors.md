@@ -64,7 +64,8 @@ title: \huge Advanced Selectors
 
 30. `:nth-last-of-type(n)`: Similar to `:nth-of-type(n)`, but counts the elements from the end. For instance, `span:nth-last-of-type(4)` selects the fourth-to-last `span` element among its siblings.
 
-31. `:root`: Selects the highest-level parent element in the document, typically the `<html>` element. It is often used to define global styles or CSS variables.
+31. `:root`: is a special class that represents the very top level of your document - the one element that has no parents. Generally when working with the web, this is equivalent to the html element, but there are a [few subtle differences](https://stackoverflow.com/questions/15899615/whats-the-difference-between-css3s-root-pseudo-class-and-html).
+    - `:root` is generally the place where you will place your ‘global’ CSS rules that you want available everywhere - such as your custom properties and CSS variables, or rules such as `box-sizing: border-box;`.
 
 32. `:checked`: Selects input elements that are checked, such as checkboxes or radio buttons. It is often used in conjunction with these input types for styling or interaction.
 
@@ -76,6 +77,75 @@ title: \huge Advanced Selectors
 
 36. `:focus`: Selects an element that is currently in focus. This is often used to style elements when they are selected by the user.
 
-37. `::selection`: Targets the portion of a document that is currently selected by the user. It is often used to style the background or text color of the selected text.
+37. `:link` and `:visited` pseudo-classes are used to style links. `:link` targets links that have not yet been visited, while `:visited` targets links that have already been visited.
 
-38. `::placeholder`: Targets the placeholder text in an input field. It is often used to style the appearance of the placeholder text.
+38. `:hover` will affect anything under the user’s mouse pointer.
+
+39. `:active` applies to elements that are currently being clicked.
+
+40. `::marker` allows you to customize the styling of your `<li>` elements’ bullets or numbers.
+
+41. `::selection`: Targets the portion of a document that is currently selected by the user. It is often used to style the background or text color of the selected text.
+
+42. `::placeholder`: Targets the placeholder text in an input field. It is often used to style the appearance of the placeholder text.
+
+43. `::first-letter` and `::first-line` allow you to give special styling to the first letter or line of some text.
+
+44. `::selection` allows you to change the highlighting when a user selects text on the page.
+
+45. `::before` and `::after` allow us to add extra elements onto the page with CSS, instead of HTML. Using it to decorate text in various ways is one common use case
+
+---
+
+# From Articles
+
+[Creating Complex Selectors With Nesting](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#creating_complex_selectors_with_nesting)
+
+The difference between pseudo-classes and pseudo-elements is that Pseudo-class selectors are prefixed with a **single colon `:`** and are a different way to target **elements that already exist in HTML**. Pseudo-elements are prefixed with **two colons `::`** and are used to target **elements that don’t normally exist in the markup**.
+
+Pseudo-classes share the same specificity as regular classes (0, 0, 1, 0). Read [this article](https://css-tricks.com/specifics-on-css-specificity/) in particular [this part](https://css-tricks.com/specifics-on-css-specificity/#aa-calculating-css-specificity-value).
+
+![Specificity Calculation](image/advanced-selectors/specificity-calculation.png){width=350px}
+
+The `:not()` sort-of-pseudo-class adds no specificity by itself, only what’s inside the parenthesis is added to specificity value.
+
+![`:not()` Specificity](image/advanced-selectors/not-specificity.png){width=350px}
+
+**Important Notes:**
+
+1. The universal selector `*` has no specificity value `(0,0,0,0)`
+
+2. Pseudo-elements (e.g. `::first-line`) get `0,0,0,1` unlike their psuedo-class brethren which get `0,0,1,0`
+
+3. The `!important` value appended a CSS property value is an automatic win. It overrides even inline styles from the markup. The only way an `!important` value can be overridden is with another `!important` rule declared later in the CSS and with equal or great specificity value otherwise. You could think of it as adding `1,0,0,0,0` to the specificity value.
+
+**Example on `:nth-child()`**
+
+```{.css .numberLines}
+.myList:nth-child(5) {/* Selects the 5th element with class myList */}
+.myList:nth-child(3n) { /* Selects every 3rd element with class myList */}
+.myList:nth-child(3n + 3) { /* Selects every 3rd element with class myList, beginning with the 3rd */}
+.myList:nth-child(even) {/* Selects every even element with class myList */}
+```
+
+**`::before` and `::after` syntax:**
+
+```{.html .numberLines}
+<style>
+  .hello::before {
+    content: 'HELLO BEFORE ';
+  }
+
+  .hello::after {
+    content: ' HELLO AFTER ';
+  }
+</style>
+
+<body>
+  <div> Let's <span class="hello">"say hello"</span>to this span!</div>
+</body>
+```
+
+Using these pseudo-elements this way would give us this result:
+
+`Let’s HELLO BEFORE "say hello" HELLO AFTER to this span!`
