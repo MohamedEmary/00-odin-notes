@@ -1,5 +1,6 @@
 ---
 title: \huge Advanced Selectors
+date: October 26, 2023
 ---
 
 # CSS Selectors
@@ -44,19 +45,19 @@ title: \huge Advanced Selectors
 
 20. `[Attribute$="Value"] => End With A String`: Selects elements where the attribute value ends with a specific string. For example, `[class$="suffix"]` targets elements with a class attribute ending with `suffix`.
 
-21. `:first-child`: Selects an element that is the first child of its parent. For example, `p:first-child` selects the first `p` element among its siblings.
+21. [`:first-child`](https://css-tricks.com/almanac/selectors/f/first-child/): Selects an element that is the first child of its parent. For example, `p:first-child` selects the first `p` element among its siblings.
 
-22. `:last-child`: Targets an element that is the last child of its parent. For instance, `li:last-child` selects the last `li` element among its siblings.
+22. [`:last-child`](https://css-tricks.com/almanac/selectors/l/last-child/): Targets an element that is the last child of its parent. For instance, `li:last-child` selects the last `li` element among its siblings.
 
 23. `:first-of-type`: Selects the first element of a specific type among its siblings. For example, `h2:first-of-type` selects the first `h2` element among its siblings.
 
 24. `:last-of-type`: Targets the last element of a specific type among its siblings. For instance, `span:last-of-type` selects the last `span` element among its siblings.
 
-25. `:only-child`: Selects an element that is the only child of its parent, meaning it has no siblings. For example, `div:only-child` selects a `div` element that is the only child of its parent.
+25. [`:only-child`](https://css-tricks.com/almanac/selectors/o/only-child/): Selects an element that is the only child of its parent, meaning it has no siblings. For example, `div:only-child` selects a `div` element that is the only child of its parent.
 
 26. `:not(Selectors)`: Selects elements that do not match the specified selectors. For example, `p:not(.special)` selects all `p` elements that do not have the class `special`.
 
-27. `:nth-child(n)`: Selects the nth child of its parent. The value of `n` can be a number, a keyword, or a formula. For instance, `li:nth-child(2)` selects the second `li` element among its siblings.
+27. [`:nth-child(n)`](https://css-tricks.com/almanac/selectors/n/nth-child/): Selects the nth child of its parent. The value of `n` can be a number, a keyword, or a formula. For instance, `li:nth-child(2)` selects the second `li` element among its siblings.
 
 28. `:nth-last-child(n)`: Similar to `:nth-child(n)`, but counts the children from the end. For example, `div:nth-last-child(3)` selects the third-to-last `div` element among its siblings.
 
@@ -64,36 +65,34 @@ title: \huge Advanced Selectors
 
 30. `:nth-last-of-type(n)`: Similar to `:nth-of-type(n)`, but counts the elements from the end. For instance, `span:nth-last-of-type(4)` selects the fourth-to-last `span` element among its siblings.
 
-31. `:root`: is a special class that represents the very top level of your document - the one element that has no parents. Generally when working with the web, this is equivalent to the html element, but there are a [few subtle differences](https://stackoverflow.com/questions/15899615/whats-the-difference-between-css3s-root-pseudo-class-and-html).
+31. [`:root`](https://css-tricks.com/almanac/selectors/r/root/): is a special class that represents the very top level of your document - the one element that has no parents. Generally when working with the web, this is equivalent to the html element, but there are a [few subtle differences](https://stackoverflow.com/questions/15899615/whats-the-difference-between-css3s-root-pseudo-class-and-html).
     - `:root` is generally the place where you will place your ‘global’ CSS rules that you want available everywhere - such as your custom properties and CSS variables, or rules such as `box-sizing: border-box;`.
 
 32. `:checked`: Selects input elements that are checked, such as checkboxes or radio buttons. It is often used in conjunction with these input types for styling or interaction.
 
-33. `:empty`: Selects elements that have no children, including text nodes and empty spaces. For example, `p:empty` selects all empty `<p>` elements.
+33. [`:empty`](https://css-tricks.com/almanac/selectors/e/empty/): Selects elements that have no children, including text nodes and empty spaces. For example, `p:empty` selects all empty `<p>` elements.
 
 34. `:disabled`: Targets form elements that are disabled. This can include input fields, buttons, or other form elements with the `disabled` attribute.
 
 35. `:required`: Selects form elements that are marked as required using the HTML `required` attribute. It's often used to style or apply specific behavior to required form fields.
 
-36. `:focus`: Selects an element that is currently in focus. This is often used to style elements when they are selected by the user.
+36. [`:focus`](https://css-tricks.com/almanac/selectors/f/focus/): Selects an element that is currently in focus. This is often used to style elements when they are selected by the user.
 
-37. `:link` and `:visited` pseudo-classes are used to style links. `:link` targets links that have not yet been visited, while `:visited` targets links that have already been visited.
+37. `:link` and `:visited` pseudo-classes are used to style links. [`:link`](https://css-tricks.com/almanac/selectors/l/link/) targets links that have not yet been visited, while [`:visited`](https://css-tricks.com/almanac/selectors/v/visited/) targets links that have already been visited.
 
-38. `:hover` will affect anything under the user’s mouse pointer.
+38. [`:hover`](https://css-tricks.com/almanac/selectors/h/hover/) will affect anything under the user’s mouse pointer.
 
-39. `:active` applies to elements that are currently being clicked.
+39. [`:active`](https://css-tricks.com/almanac/selectors/a/active/) applies to elements that are currently being clicked.
 
-40. `::marker` allows you to customize the styling of your `<li>` elements’ bullets or numbers.
+40. [`::marker`](https://css-tricks.com/almanac/selectors/m/marker/) allows you to customize the styling of your `<li>` elements’ bullets or numbers.
 
-41. `::selection`: Targets the portion of a document that is currently selected by the user. It is often used to style the background or text color of the selected text.
+41. [`::selection`](https://css-tricks.com/almanac/selectors/s/selection/): Targets the portion of a document that is currently selected by the user. It is often used to style the background or text color of the selected text. It allows you to change the highlighting when a user selects text on the page.
 
 42. `::placeholder`: Targets the placeholder text in an input field. It is often used to style the appearance of the placeholder text.
 
-43. `::first-letter` and `::first-line` allow you to give special styling to the first letter or line of some text.
+43. [`::first-letter`](https://css-tricks.com/almanac/selectors/f/first-letter/) and [`::first-line`](https://css-tricks.com/almanac/selectors/f/first-line/) allow you to give special styling to the first letter or line of some text.
 
-44. `::selection` allows you to change the highlighting when a user selects text on the page.
-
-45. `::before` and `::after` allow us to add extra elements onto the page with CSS, instead of HTML. Using it to decorate text in various ways is one common use case
+44. `::before` and `::after` allow us to add extra elements onto the page with CSS, instead of HTML. Using it to decorate text in various ways is one common use case
 
 ---
 
@@ -103,7 +102,11 @@ title: \huge Advanced Selectors
 
 To see what other things not mentioned here you can achieve with **attribute selectors**, such as searching case insensitivity, or sub-strings separated by hyphens, have a browse through the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors).
 
-The difference between pseudo-classes and pseudo-elements is that Pseudo-class selectors are prefixed with a **single colon `:`** and are a different way to target **elements that already exist in HTML**. Pseudo-elements are prefixed with **two colons `::`** and are used to target **elements that don’t normally exist in the markup**.
+[Pseudo-classes Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
+[Pseudo-elements Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+The [difference between pseudo-classes and pseudo-elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements) is that Pseudo-class selectors are prefixed with a **single colon `:`** and are a different way to target **elements that already exist in HTML**. Pseudo-elements are prefixed with **two colons `::`** and are used to target **elements that don’t normally exist in the markup**.
 
 Pseudo-classes share the same specificity as regular classes (0, 0, 1, 0). Read [this article](https://css-tricks.com/specifics-on-css-specificity/) in particular [this part](https://css-tricks.com/specifics-on-css-specificity/#aa-calculating-css-specificity-value).
 
@@ -134,7 +137,7 @@ The `:not()` sort-of-pseudo-class adds no specificity by itself, only what’s i
 .myList:nth-child(even) {/* Selects every even element with class myList */}
 ```
 
-**`::before` and `::after` syntax:**
+**[`::before` and `::after`](https://css-tricks.com/almanac/selectors/a/after-and-before/) syntax:**
 
 ```{.html .numberLines}
 <style>
@@ -155,3 +158,5 @@ The `:not()` sort-of-pseudo-class adds no specificity by itself, only what’s i
 Using these pseudo-elements this way would give us this result:
 
 `Let’s HELLO BEFORE "say hello" HELLO AFTER to this span!`
+
+Read Shay Howe’s [article on Complex Selectors](https://learn.shayhowe.com/advanced-html-css/complex-selectors/). This covers most of the content of this lesson in a bit more detail. As stated in their article, they sometimes use a single colon instead of a double one for pseudo-elements. Please keep in mind that the double colon is now the standard.
