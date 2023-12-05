@@ -378,3 +378,15 @@ To see this in action, look at the following 2 examples, the first with `auto-fi
 
 - [Example 1](https://codepen.io/TheOdinProjectExamples/pen/mdByJyJ)
 - [Example 2](https://codepen.io/TheOdinProjectExamples/pen/KKXwpwX)
+
+# Grid VS Flexbox
+
+Grid and flexbox are both powerful layout tools in CSS that can help create responsive and attractive web designs. However, they have different strengths and weaknesses, and choosing the right one depends on the type of layout and the content.
+
+One way to decide between grid and flexbox is to consider if the design starts from the content or from the layout. Content first design means that the content determines how the layout should be, while layout first design means that the layout is predefined and the content fills in the spaces.
+
+Flexbox is more suitable for content first design, because it allows the items to flexibly grow, shrink, and align according to their size and position. Flexbox is ideal for one-dimensional layouts, where the items are arranged in either a row or a column. Flexbox can also wrap items to the next line or column, but this can be tricky and unpredictable.
+
+Grid is more suitable for layout first design, because it allows the developer to define a precise grid of rows and columns and place the items in any cell. Grid is ideal for two-dimensional layouts, where the items are arranged in both rows and columns. Grid can also handle one-dimensional layouts, but it may be overkill for simple cases.
+
+Flexbox and grid are not mutually exclusive, and they can be combined to create complex and responsive layouts. For example, the overall layout can be a grid, but each grid item can be a flex container that holds its own content. This way, the grid items can benefit from the two-dimensional placement of grid, while the content inside can benefit from the one-dimensional flexibility of flexbox.
