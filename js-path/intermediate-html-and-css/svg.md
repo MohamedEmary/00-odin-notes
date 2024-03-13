@@ -1,5 +1,6 @@
 ---
 title: \huge SVG
+date: December 5, 2023
 ---
 
 # What is SVG

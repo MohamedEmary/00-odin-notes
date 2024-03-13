@@ -1,5 +1,6 @@
 ---
 title: \huge Default Styles
+date: December 5, 2023
 ---
 
 # Default Styles

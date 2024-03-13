@@ -1,5 +1,6 @@
 ---
 title: \huge More Text Styles
+date: December 5, 2023
 ---
 
 # Fonts and Text Styles
