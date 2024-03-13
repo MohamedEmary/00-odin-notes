@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>The Odin Project Notes</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container d-flex flex-column min-vh-100 justify-content-center">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="header mb-5">The Odin Project Notes & Projects</h1>
+          <div class="list-group">
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+              data-toggle="modal"
+              data-target="#PDF"
+            >
+              Lessons PDF Notes
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+              data-toggle="modal"
+              data-target="#assignmentsModal"
+            >
+              Projects
+            </button>
+            <!-- <button
+              type="button"
+              class="list-group-item list-group-item-action"
+              data-toggle="modal"
+              data-target="#other"
+            >
+              Other
+            </button> -->
+            <!-- Add more folders here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for PDF Notes -->
+    <div
+      class="modal fade"
+      id="PDF"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="folder1ModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="folder1ModalLabel">
+              PDF Notes
+              <div style="font-size: small; font-weight: normal">
+                <i>Just Select The PDF From The List To Download</i><br />
+                <i>Lessons Are Listed In The Same Order As TOP</i> <br />
+                <i>Some Lessons Don't Have PDF Files</i><br />
+              </div>
+            </h5>
+
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Foundations</h5>
+
+            <select class="custom-select">
+              <option
+                value="foundations/foundations-prerequisites/how-dns-works.pdf"
+              >
+                How DNS Works
+              </option>
+              <option
+                value="foundations/foundations-js/PDF/javaScript-developer-tools.pdf"
+              >
+                JavaScript Developer Tools
+              </option>
+              <option value="foundations/foundations-js/PDF/fundamentals-1.pdf">
+                JS Fundamentals 1
+              </option>
+              <option value="foundations/foundations-js/PDF/fundamentals-2.pdf">
+                JS Fundamentals 2
+              </option>
+              <option value="foundations/foundations-js/PDF/fundamentals-3.pdf">
+                JS Fundamentals 3
+              </option>
+              <option value="foundations/foundations-js/PDF/fundamentals-4.pdf">
+                JS Fundamentals 4
+              </option>
+              <option value="foundations/foundations-js/PDF/fundamentals-5.pdf">
+                JS Fundamentals 5
+              </option>
+              <option
+                value="foundations/foundations-js/PDF/understanding-errors.pdf"
+              >
+                Understanding Errors
+              </option>
+              <option value="foundations/foundations-js/PDF/clean-code.pdf">
+                Clean Code
+              </option>
+
+              <option
+                value="foundations/foundations-js/PDF/DOM-manipulation-and-events.pdf"
+              >
+                DOM Manipulation and Events
+              </option>
+              <option
+                value="foundations/foundations-js/PDF/revisiting-rock-paper-scissors.pdf"
+              >
+                Revisiting Rock Paper Scissors
+              </option>
+
+              <option
+                value="foundations/foundations-js/PDF/choose-your-path-forward.pdf"
+              >
+                Choose Your Path Forward
+              </option>
+              <!-- 
+                Lessons/PDFs not in the list:
+                  1. installing-node.js
+                  2. lesson-tracking
+                  3. problem-solving
+               -->
+            </select>
+            <h5>JS Path <i>(Intermediate HTML & CSS Course)</i></h5>
+            <select class="custom-select">
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/introduction.pdf"
+              >
+                Introduction
+              </option>
+              <option value="js-path/intermediate-html-and-css/PDFs/emmet.pdf">
+                Emmet
+              </option>
+              <option value="js-path/intermediate-html-and-css/PDFs/svg.pdf">
+                SVG
+              </option>
+              <option value="js-path/intermediate-html-and-css/PDFs/tables.pdf">
+                Tables
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/default-styles.pdf"
+              >
+                Default Styles
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/css-units.pdf"
+              >
+                CSS Units
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/more-text-styles.pdf"
+              >
+                More Text Styles
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/more-css-properties.pdf"
+              >
+                More CSS Properties
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/advanced-selectors.pdf"
+              >
+                Advanced Selectors
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/positioning.pdf"
+              >
+                Positioning
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/css-functions.pdf"
+              >
+                CSS Functions
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/custom-properties.pdf"
+              >
+                Custom Properties
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/form-basics.pdf"
+              >
+                Form Basics
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/form-validation.pdf"
+              >
+                Form Validation
+              </option>
+              <option
+                value="js-path/intermediate-html-and-css/PDFs/css-grid.pdf"
+              >
+                CSS Grid
+              </option>
+            </select>
+            <!-- Add more links here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for Assignments -->
+    <div
+      class="modal fade"
+      id="assignmentsModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="assignmentsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="assignmentsModalLabel">Assignments:</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Assignment No</th>
+                  <th scope="col">Code</th>
+                  <th scope="col">Preview</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Add your assignments links here -->
+                <tr>
+                  <td scope="row">
+                    <a
+                      href="https://drive.google.com/drive/folders/1gP84y_LeG35QIv_VUyUFko5uqpG3ctfw"
+                      >Assignment 1</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="https://github.com/MohamedEmary/route-frontend/blob/main/sessions/session-01/assignment/assignment1.html"
+                      >Code</a
+                    >
+                  </td>
+                  <td>
+                    <a href="sessions/session-01/assignment/assignment1.html"
+                      >Preview</a
+                    >
+                  </td>
+                </tr>
+
+                <tr>
+                  <td scope="row">
+                    <a
+                      href="https://drive.google.com/drive/folders/1yzVbd5TRD3O7VbtU-xhobyNRLL4HmLG5"
+                      >Assignment 2</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="https://github.com/MohamedEmary/route-frontend/blob/main/sessions/session-02/assignment/assignment2.html"
+                      >Code</a
+                    >
+                  </td>
+                  <td>
+                    <a href="sessions/session-02/assignment/assignment2.html"
+                      >Preview</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for Other -->
+    <div
+      class="modal fade"
+      id="other"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="otherModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="otherModalLabel">Other:</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <!-- Add your links here -->
+              <li>
+                <a href="https://github.com/MohamedEmary/route-frontend"
+                  >GitHub Repository</a
+                >
+              </li>
+              <li>
+                <a href="https://raindrop.io/Spark71/route-academy-42311434"
+                  >Shared Links Page</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted">Made by Mohamed Emary</span>
+        <a href="https://github.com/MohamedEmary" class="github-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </footer>
+    <script>
+      window.onload = function () {
+        var anchors = document.getElementsByTagName("a");
+        for (var i = 0; i < anchors.length; i++) {
+          anchors[i].setAttribute("target", "_blank");
+          anchors[i].setAttribute("rel", "noopener noreferrer");
+        }
+      };
+
+      document.querySelectorAll(".custom-select").forEach(function (select) {
+        select.addEventListener("change", function () {
+          var url = this.value;
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = url.split("/").pop();
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
