@@ -93,59 +93,57 @@
                 How DNS Works
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/javaScript-developer-tools.pdf"
+                value="foundations/foundations-js/PDFs/javaScript-developer-tools.pdf"
               >
                 JavaScript Developer Tools
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/fundamentals-1.pdf"
+                value="foundations/foundations-js/PDFs/fundamentals-1.pdf"
               >
                 JS Fundamentals 1
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/fundamentals-2.pdf"
+                value="foundations/foundations-js/PDFs/fundamentals-2.pdf"
               >
                 JS Fundamentals 2
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/fundamentals-3.pdf"
+                value="foundations/foundations-js/PDFs/fundamentals-3.pdf"
               >
                 JS Fundamentals 3
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/fundamentals-4.pdf"
+                value="foundations/foundations-js/PDFs/fundamentals-4.pdf"
               >
                 JS Fundamentals 4
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/fundamentals-5.pdf"
+                value="foundations/foundations-js/PDFs/fundamentals-5.pdf"
               >
                 JS Fundamentals 5
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/understanding-errors.pdf"
+                value="foundations/foundations-js/PDFs/understanding-errors.pdf"
               >
                 Understanding Errors
               </option>
-              <option
-                value="foundations/foundations-js/Markdown/PDFs/clean-code.pdf"
-              >
+              <option value="foundations/foundations-js/PDFs/clean-code.pdf">
                 Clean Code
               </option>
 
               <option
-                value="foundations/foundations-js/Markdown/PDFs/DOM-manipulation-and-events.pdf"
+                value="foundations/foundations-js/PDFs/DOM-manipulation-and-events.pdf"
               >
                 DOM Manipulation and Events
               </option>
               <option
-                value="foundations/foundations-js/Markdown/PDFs/revisiting-rock-paper-scissors.pdf"
+                value="foundations/foundations-js/PDFs/revisiting-rock-paper-scissors.pdf"
               >
                 Revisiting Rock Paper Scissors
               </option>
 
               <option
-                value="foundations/foundations-js/Markdown/PDFs/choose-your-path-forward.pdf"
+                value="foundations/foundations-js/PDFs/choose-your-path-forward.pdf"
               >
                 Choose Your Path Forward
               </option>
@@ -409,12 +407,7 @@
       document.querySelectorAll(".custom-select").forEach(function (select) {
         select.addEventListener("change", function () {
           var url = this.value;
-          var a = document.createElement("a");
-          a.href = url;
-          a.download = url.split("/").pop();
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
+          window.open(url, "_blank");
         });
       });
     </script>
