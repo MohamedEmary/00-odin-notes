@@ -406,14 +406,6 @@
       </div>
     </footer>
     <script>
-      window.onload = function () {
-        var anchors = document.getElementsByTagName("a");
-        for (var i = 0; i < anchors.length; i++) {
-          anchors[i].setAttribute("target", "_blank");
-          anchors[i].setAttribute("rel", "noopener noreferrer");
-        }
-      };
-
       document.querySelectorAll(".custom-select").forEach(function (select) {
         select.addEventListener("change", function () {
           var url = this.value;
