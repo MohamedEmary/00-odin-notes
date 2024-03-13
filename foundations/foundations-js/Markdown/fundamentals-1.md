@@ -1,28 +1,6 @@
 ---
 title: JS Fundamentals Lesson 1
-subtitle: 
-author: [Mohamed Emary]
-# abstract: 
-date: \today
-paper: a4
-# toc: true
-# toc-depth: 
-# lof: true
-geometry:
-- top=25mm
-- bottom=25mm
-- right=20mm
-- left=20mm
-# fontfamily:
-numbersections: yes
-fig_caption: true
-# theme: copenhagen
-linkcolor: blue
-include-before:
-- '`\newpage{}`{=latex}'
-header-includes:
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+date: August 16, 2023
 ---
 
 # Main Notes
@@ -38,9 +16,7 @@ header-includes:
 | Keyword | Scope | Can be reassigned | Can be redeclared | Hoisted | Temporal Dead Zone | Advantages | Disadvantages |
 | -- | -- | --- | --- | -- | --- | ---- | ------ |
 | `var`   | Function | Yes | Yes | Yes | No | Can be useful for hoisting | Can lead to unexpected behavior due to hoisting and function scope |
-| | | | | | | | |
 | `let`   | Block | Yes | No | No | Yes | Block scoping can prevent variable leakage | Cannot be hoisted, which can lead to reference errors |
-| | | | | | | | |
 | `const` | Block | No | No | No | Yes | Prevents accidental reassignment | Cannot be reassigned, which can be inconvenient in some cases |
 
 ## Some JavaScript Notes
@@ -119,17 +95,11 @@ Code will be like: `MyNumber.toString(base);`
 | Base | Base Name | Result | Conversion |
 | --- | --- | --- | ---------- |
 | 36   | Hexatrigesimal   | w     | $w = 32$   |
-||||
 | 32   | Duotrigesimal   |  10    | $1 \times 32 + 0 \times 1 = 32$ |
-||||
 | 16   | Hexadecimal   | 20     | $2 \times 16 + 0 \times 1 = 32$ |
-||||
 | 12   | Duodecimal   | 28     | $2 \times 12 + 8 \times 1 = 32$ |
-||||
 | 10   | Decimal   | 32     | $3 \times 10 + 2 \times 1 = 32$ |
-||||
 | 8    | Octal    | 40     | $4 \times 8 + 0 \times 1 = 32$ |
-||||
 | 2    | Binary    | 100000     | $1 \times 32 + 0 \times 16 + 0 \times 8 + 0 \times 4 + 0 \times 2 + 0 \times 1 = 32$ |
 
 **Numbers can be defined as objects with the keyword new: `let y = new Number(123);`. However, avoid `new` keyword. It complicates the code, slows down execution, and produce unexpected results.**
@@ -164,7 +134,6 @@ Comparison between `==` and `===` operators in JS
 | Operator | Name | Description | Example |
 | -- | --- | -------- | -------- |
 | `==` | Equality | Test whether the values are the same but not whether the values' datatypes are the same | `5 == "5"` returns `true` because JavaScript converts the string `"5"` to the number `5` before making the comparison. |
-|||
 | `===` | Strict Equality | Test the equality of both the values and their datatypes | `5 === "5"` returns `false` because the operands are of different types. |
 
 ***The strict versions tend to result in fewer errors, so we recommend you use them.***

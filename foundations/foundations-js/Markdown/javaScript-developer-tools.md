@@ -1,31 +1,6 @@
 ---
 title: JavaScript Developer Tools
-subtitle: 
-author: [Mohamed Emary]
-abstract: 
-date: \today
-paper: a4
-# toc: true
-# toc-depth: 
-# lof: true
-geometry:
-- top=25mm
-- bottom=25mm
-- right=20mm
-- left=20mm
-fontfamily:
-fontsize: 11pt
-numbersections: yes
-fig_caption: true
-theme: copenhagen
-linkcolor: blue
-include-before:
-- '`\newpage{}`{=latex}'
-header-includes:
- - \usepackage{fvextra}
- - \usepackage{pgfplots}
- - \usepackage{tikz}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+date: August 21, 2023
 ---
 
 # [Console overview](https://developer.chrome.com/docs/devtools/console/)
@@ -39,22 +14,14 @@ There is even a function that lets you debug your code from the console. Example
 | Methods of `console.`  | Description |
 | ---- | ---------------- |
 | `warn()` | Logs warning messages to the console. |
-||
 | `error()` | Logs error messages to the console. |
-||
 | `clear()` | Clears the console. You can also clear messages with the Clear button |
-||
 | `table()` | Displays data in a tabular format. |
-||
 | `dir()` | Displays an interactive list of the properties of the specified JavaScript object. |
 | `group()` | Creates a new inline group, indenting all following output by another level. To move back out a level, call `groupEnd()`. |
-||
 | `groupCollapsed()` | Creates a new inline group, indenting all following output by another level. However, unlike `group()`, starts with the inline group collapsed requiring the use of a disclosure button to expand it. To move back out a level, call `groupEnd()`. |
-||
 | `count()` | Logs the number of times that this particular call to `count()` has been called. |
-||
 | `trace()` | Outputs a stack trace to the console. |
-||
 | `time()` | Starts a timer (can track how long an operation takes). |
 
 ## Example Usage
@@ -65,7 +32,7 @@ console.warn("Hello World");
 console.error("Hello World");
 ```
 
-![Output 1](images\javaScript-developer-tools\image.png)
+![Output 1](images/javaScript-developer-tools/image.png)
 
 ---
 
@@ -80,7 +47,7 @@ console.table([
 console.dir(["Hello", "World"]);
 ```
 
-![Output 2](images\javaScript-developer-tools\image-3.png)
+![Output 2](images/javaScript-developer-tools/image-3.png)
 
 **Notice that the input lines doesn't appear in the image above because we used `console.clear()`.**
 
@@ -98,7 +65,7 @@ console.log('Message 4');
 console.groupEnd();
 ```
 
-![Output 3](images\javaScript-developer-tools\image-4.png)
+![Output 3](images/javaScript-developer-tools/image-4.png)
 
 ---
 
@@ -114,7 +81,7 @@ console.log('Message 4');
 console.groupEnd();
 ```
 
-![Output 4](images\javaScript-developer-tools\image-5.png)
+![Output 4](images/javaScript-developer-tools/image-5.png)
 
 ---
 
@@ -126,7 +93,7 @@ console.count('Label 1');
 console.count('Label 2');
 ```
 
-![Output 5](images\javaScript-developer-tools\image-6.png)
+![Output 5](images/javaScript-developer-tools/image-6.png)
 
 ---
 
@@ -142,7 +109,7 @@ function bar() {
 bar();
 ```
 
-![Output 6](images\javaScript-developer-tools\image-7.png)
+![Output 6](images/javaScript-developer-tools/image-7.png)
 
 ---
 
@@ -158,4 +125,4 @@ for (let i = 0; i < 1000000; i++) {
 console.timeEnd("Timer 1");
 ```
 
-![Output 7](images\javaScript-developer-tools\image-8.png)
+![Output 7](images/javaScript-developer-tools/image-8.png)

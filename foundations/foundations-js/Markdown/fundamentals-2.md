@@ -1,28 +1,6 @@
 ---
 title: JS Fundamentals Lesson 2
-subtitle: 
-author: [Mohamed Emary]
-abstract: 
-date: \today
-paper: a4
-# toc: true
-# toc-depth: 
-# lof: true
-geometry:
-- top=25mm
-- bottom=25mm
-- right=20mm
-- left=20mm
-fontfamily:
-numbersections: yes
-fig_caption: true
-theme: copenhagen
-linkcolor: blue
-include-before:
-- '`\newpage{}`{=latex}'
-header-includes:
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+date: August 22, 2023
 ---
 
 # [Handling text — strings in JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings#the_power_of_words)
@@ -77,9 +55,7 @@ Comparison `substr()`, `substring()`, and `slice()`:
 | Method | Parameters | Negative Index |
 | ---- | ------------ | ------------ |
 | `substr()` | `start`, `length` **not end** | Allowed |
-|||
 | `substring()` | `start`, `end` | Treated as zero |
-|||
 | `slice()` | `start`, `end` | Allowed |
 
 In the 3 functions if you omit the `end` parameter it will slice out the rest of the string.
@@ -122,31 +98,18 @@ text.split("")    // Split on individual characters
 | Method | Parameters | Return Value |
 | ---- | -------- | -------------- |
 | `length` | N/A | The length of the string |
-|||
 | `replace()` | `searchValue`, `replaceValue` | A new string with all occurrences of `searchValue` replaced with `replaceValue` |
-|||
 | `replaceAll()` | `searchValue`, `replaceValue` | A new string with all occurrences of `searchValue` replaced with `replaceValue` (new in ECMAScript 2021) |
-|||
 | `toUpperCase()` | N/A | A new string with all characters converted to uppercase |
-|||
 | `toLowerCase()` | N/A | A new string with all characters converted to lowercase |
-|||
 | `concat()` | `string2`, `string3`, ... | A new string that concatenates the original string with one or more additional strings |
-|||
 | `trim()` | N/A | A new string with all whitespace removed from the beginning and end of the original string |
-|||
 | `trimStart()` | N/A | A new string with all whitespace removed from the beginning of the original string (new in ECMAScript 2021) |
-|||
 | `trimEnd()` | N/A | A new string with all whitespace removed from the end of the original string (new in ECMAScript 2021) |
-|||
 | `padStart()` | `targetLength`, `padString` | A new string with the original string padded with `padString` at the beginning to reach the specified `targetLength` |
-|||
 | `padEnd()` | `targetLength`, `padString` | A new string with the original string padded with `padString` at the end to reach the specified `targetLength` |
-|||
 | `charAt()` | `index` | The character at the specified `index` |
-|||
 | `charCodeAt()` | `index` | The Unicode value of the character at the specified `index` |
-|||
 | `split()` | `separator`, `limit` | An array of substrings created by splitting the original string at each occurrence of `separator` (or at most `limit` occurrences) |
 
 # [JavaScript String Reference](https://www.w3schools.com/jsref/jsref_obj_string.asp)
@@ -158,7 +121,6 @@ look at String HTML Wrapper Methods in the page
 | Name | Description |
 | ------- | -------------------- |
 | `indexOf()` | Returns the index (position) of the first occurrence of a value in a string |
-||
 |`repeat()` | Returns a new string with a number of copies of a string |
 
 # [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
@@ -204,7 +166,6 @@ Many built-in operations that expect strings first coerce their arguments to str
 | Value | Type | Numeric Conversion | Equality Check | Strict Equality Check | Comparison |
 | -- | -- | --- | ------ | ----- | --- |
 | `null` | `null` | `0` | `null`, `undefined` only return `true`, other values are `false` | only return `true`, other values are `false` | `<, <=, >, >= 0` |
-| | | |
 | `undefined` | `undefined` | `NaN` | | `undefined` only return `true`, other values are `false` | Always `false` |
 
 There is some more information you can find ***in kindle highlights***

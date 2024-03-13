@@ -1,46 +1,6 @@
 ---
 title: Understanding Errors Lesson
-subtitle: 
-author: [Mohamed Emary]
-# author:
-# - Mohamed Ahmed Emary^[**Benha Faculty of Computers and Artificial Intelligence, <mohamed21074@fci.bu.edu.eg>**]
-abstract: 
-date: \today
-paper: a4
-# toc: true
-# toc-depth: 
-# lof: true
-geometry:
-- top=20mm
-- bottom=20mm
-- right=20mm
-- left=20mm
-fontfamily:
-fontsize: 11pt
-numbersections: yes
-fig_caption: true
-theme: copenhagen
-linkcolor: black
-urlcolor: blue
-include-before:
-# Pagebreak after main title
-- '`\newpage{}`{=latex}'
-header-includes:
-# Code blocks linebreaks
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-
-# Graphs & function plots
-#  - \usepackage{pgfplots}
- - \usepackage{tikz}
-
-# tcolorbox package
- - \usepackage[most]{tcolorbox}
-# Figures with captions
- - \usepackage{float}
- - \makeatletter
- - \def\fps@figure{H} 
- - \makeatother
+date: August 29, 2023
 ---
 
 # The anatomy of an error

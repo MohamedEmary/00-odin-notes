@@ -1,39 +1,6 @@
 ---
 title: JS Fundamentals Lesson 3
-subtitle: 
-author: [Mohamed Emary]
-# author:
-# - Mohamed Ahmed Emary^[**Benha Faculty of Computers and Artificial Intelligence, <mohamed21074@fci.bu.edu.eg>**]
-abstract: 
-date: \today
-paper: a4
-# toc: true
-# toc-depth: 
-# lof: true
-geometry:
-- top=25mm
-- bottom=25mm
-- right=20mm
-- left=20mm
-fontfamily:
-# fontsize: 10pt
-numbersections: yes
-fig_caption: true
-theme: copenhagen
-linkcolor: blue
-include-before:
-# Pagebreak after main title
-- '`\newpage{}`{=latex}'
-header-includes:
-# Code blocks linebreaks
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-
-# # Figures with captions
-#  - \usepackage{float}
-#  - \makeatletter
-#  - \def\fps@figure{H} 
-#  - \makeatother
+date: September 7, 2023
 ---
 
 # Nullish Coalescing Operator
@@ -928,4 +895,3 @@ Your reducer function's returned value is assigned to the accumulator, whose val
 [Solve this again](https://youtu.be/Wn-JbwQLAlA)
 
 ---
-

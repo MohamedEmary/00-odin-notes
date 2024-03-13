@@ -1,7 +1,6 @@
 ---
 title: \huge Choose Your Path Forward
-subtitle: 
-abstract: 
+date: October 4, 2023
 ---
 
 # What you should have learned

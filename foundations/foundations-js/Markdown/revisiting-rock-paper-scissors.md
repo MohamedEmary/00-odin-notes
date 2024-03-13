@@ -1,8 +1,6 @@
 ---
 title: Revisiting Rock Paper Scissors
-subtitle: 
-abstract: 
-output: pdf_document
+date: September 17, 2023
 ---
 
 
