@@ -1,7 +1,6 @@
 ---
 title: \huge How the DNS system works
-subtitle: 
-abstract: 
+date: October 4, 2023
 ---
 
 ---
@@ -31,7 +30,7 @@ When you first search for `www.example.com.`:
 
 The whole cycle is very complex but it takes a few milliseconds.
 
-![DNS Lookup](imgs\how-dns-works\how-dns-works.svg){height=500px}
+![DNS Lookup](imgs/how-dns-works/how-dns-works.svg){height=500px}
 
 <!-- ```plantuml
 @startmindmap
