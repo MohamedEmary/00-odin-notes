@@ -28,7 +28,6 @@ coverage
 /foundations-js/*.json
 /foundations-js/tempCodeRunnerFile.js
 
-
 # nyc test coverage
 .nyc_output
 
@@ -135,7 +134,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-
 # my files
 .history
 draft
+foundations/foundations-js/ignored
