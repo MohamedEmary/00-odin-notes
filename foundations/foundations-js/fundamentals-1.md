@@ -5,7 +5,7 @@ date: August 16, 2023
 
 # Main Notes
 
-**Return to all the hard code snippets (DOM Manipulation) in all articles mentioned in JS Sections**
+**Return to all the hard DOM Manipulation code snippets in all articles mentioned in JS Sections**
 
 <!-- **notes on Javascript.info website articles is on kindle** -->
 
