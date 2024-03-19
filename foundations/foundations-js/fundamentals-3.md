@@ -167,9 +167,34 @@ The second function definition `anon_sum_not_hoisted` is not hoisted to the top 
 
 Notice that since `anon_sum_not_hoisted` is an anonymous function the inline function definition doesn't have a name you can also have a name in that function but it will be only accessible inside the function.
 
+> If you assign a named function to a variable (like `anon_sum_not_hoisted` in the example), the name of the function is only accessible within the function's scope. This is different from the function's variable name, which is accessible in the outer scope.
+>
+> Here's an example to illustrate this:
+>
+> ```{.js .numberLines}
+> let anon_sum_not_hoisted = function innerFunctionName(...numbers) {
+>   console.log(innerFunctionName); // accessible, logs the function itself
+>   let total = 0;
+>   for (let number of numbers) {
+>     total += number;
+>   }
+>   return total;
+> };
+> 
+> console.log(innerFunctionName); // Uncaught ReferenceError: innerFunctionName is not defined
+> ```
+>
+> In the example above, `innerFunctionName` is only accessible within the function itself, not outside of it. However, `anon_sum_not_hoisted` is accessible in the outer scope.
+
 The anonymous function is declared and initialized when their definition is evaluated at parse time before runtime, and it's available for **invocation (function calling)** right away.
 
-The JavaScript engine compiles the source code before execution. This parses and evaluates function definitions.
+> The JavaScript engine compiles the source code before execution. This parses and evaluates function definitions.
+>
+> JavaScript uses a JavaScript engine (like V8, SpiderMonkey, etc.) that compiles the source code before execution. During this process, it parses the code, which includes evaluating function definitions, and then it converts the code into machine code. This is part of JavaScript's "Just-In-Time" (JIT) compilation process.
+>
+> JavaScript is often referred to as an interpreted language because traditionally, JavaScript was interpreted line by line. However, modern JavaScript engines like V8 (used in Chrome and Node.js) use a technique called Just-In-Time (JIT) compilation to compile JavaScript to machine code just before runtime. This allows for significant performance improvements.
+>
+> So, while it's not incorrect to say JavaScript is an interpreted language (because it was and can still be interpreted), it's more accurate to say that JavaScript is a dynamically-typed language that is compiled and interpreted at runtime by a JavaScript engine using JIT compilation.
 
 *Example:*
 
@@ -183,11 +208,11 @@ const myFunc = function() {
 myFunc(); // 'Hi!'
 ```
 
-Anonymous function can has a name but it will be only accessible inside the function and if you try to access it outside the function you will get a `ReferenceError`.
+<!-- Anonymous function can has a name but it will be only accessible inside the function and if you try to access it outside the function you will get a `ReferenceError`. -->
 
 ## Nesting Functions in JavaScript
 
-Functions in JavaScript can be nested inside other functions. This is useful for encapsulation. Nested functions are only accessible inside the function they are nested in.
+Functions in JavaScript can be nested inside other functions. This is useful for ***encapsulation***. Nested functions are only accessible inside the function they are nested in.
 
 When nesting functions you can even return the nested function from the outer function. This is called a ***closure***. The nested function will still have access to the outer function's variables even after the outer function has returned.
 
@@ -267,8 +292,6 @@ function get_info(first_name, last_name, birth_year) {
 console.log(get_info("Mohamed", "Ahmed", 2010));
 ```
 
-\pagebreak
-
 ## Arrow Function
 
 Arrow functions is JavaScript are a shorthand for writing functions. They are written using the `=>` syntax. They are anonymous functions and must be stored in a variable to be used.
@@ -308,9 +331,6 @@ The scope of a variable is the region of your program in which it is defined. Ja
 
 When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. When you declare a variable within a function, it is called a local variable, because it is available only within that function.
 
-::::: columns
-::: column
-
 *Example 1:*
 
 ```{.js .numberLines}
@@ -329,9 +349,6 @@ scope();
 console.log(a); // 1
 console.log(b); // 2
 ```
-
-:::
-::: column
 
 *Example 2:*
 
@@ -352,9 +369,6 @@ console.log(c); // 1
 console.log(d); // 2
 ```
 
-:::
-:::::
-
 In both examples we see that the scope of variables defined inside a function is only the function.
 
 In *example 1* if you comment the line `let b = 2;` inside the function you will get `b = 2`, also if you comment the line `var a = 10;` inside the function you will get `a = 1`.
@@ -362,9 +376,6 @@ In *example 1* if you comment the line `let b = 2;` inside the function you will
 Functions have their own scope in JavaScript. Variables defined inside a function are not accessible from outside the function but variables defined outside a function are accessible from inside the function.
 
 Loops, if statements, and other blocks of code do not have their own scope. Variables defined inside a block of code are accessible from outside the block. This behavior depend on whether you used `var`, `let`, or `const` to define the variable`/`constant because `var` is function scoped but not block scoped but `let` and `const` are function and block scoped.
-
-::::: columns
-::: column
 
 *Example 1:*
 
@@ -387,9 +398,6 @@ console.log(a); // 5
 console.log(b); // 30 not 3
 ```
 
-:::
-::: column
-
 *Example 2:*
 
 ```{.js .numberLines}
@@ -409,9 +417,6 @@ console.log(a); // 5
 console.log(b); // 30 not 3
 ```
 
-:::
-:::::
-
 The `Cannot access 'b' before initialization` error happens because the `console.log()` has found a variable `b` in the block scope but it's not initialized yet so it throws an error. This part of the code is called the ***Temporal Dead Zone (TDZ)***.
 
 ***Temporal Dead Zone (TDZ)*** is the area of block where a variable is inaccessible until the moment the computer completely initializes it with a value.
@@ -420,8 +425,6 @@ The `Cannot access 'b' before initialization` error happens because the `console
 <!-- Laxical Environment -->
 
 The last scope we are going to discuss is the ***Lexical Scope***. Since we can nest functions in JavaScript, functions can be defined inside other functions. The inner function can access the variables of the outer function but the outer function cannot access the variables of the inner function this is the ***Lexical Scope***.
-
-:::::{.columns .ragged}
 
 *Example 1:*
 
@@ -436,8 +439,6 @@ function outer1(){
 
 outer1()
 ```
-
-\columnbreak
 
 *Example 2:*
 
@@ -454,10 +455,6 @@ function outer2(){
 
 outer2()
 ```
-
-:::::
-
-\pagebreak
 
 *Example 3:*
 
@@ -540,11 +537,7 @@ Function **parameters** are the items listed between the parentheses **in the fu
 
 A function parameter is just a **placeholder** for some future value
 
-::: {.columns columngap=2.5em column-rule="0pt solid black"}
-
 In this code We’re passing in a function call `favoriteAnimal('Goat')` as an argument in a different function call `log()`
-
-\columnbreak
 
 ```{.js .numberLines}
  function favoriteAnimal(animal) {
@@ -554,17 +547,11 @@ In this code We’re passing in a function call `favoriteAnimal('Goat')` as an a
  console.log(favoriteAnimal('Goat'))
 ```
 
-:::
-
 If a same-named variable is declared inside the function then it shadows the outer one. It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most variables reside in their functions. Sometimes though, they can be useful to store project-level data.
-
-::: {.columns .ragged columngap=2.5em column-rule="0pt solid black"}
 
 When the function is called in lines `*` and `**`, the given values are copied to local variables `from` and `text`. Then the function uses them.
 
 Here’s one more example: we have a variable `from` and pass it to the function. Please note: the function changes `from`, but the change is not seen outside, because a function always gets a copy of the value:
-
-\columnbreak
 
 ```{.js .numberLines}
 function showMessage(from, text) {
@@ -578,15 +565,9 @@ showMessage(from, "Hello"); // *Ann*: Hello
 alert( from ); // Ann
 ```
 
-:::
-
 ---
 
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
-
 When using default function parameters you can have complex expression that are the default value of the parameter, for example it can be a function call.
-
-\columnbreak
 
 ```{.js .numberLines}
 function showMessage(from, text = anotherFunction()) {
@@ -595,19 +576,13 @@ function showMessage(from, text = anotherFunction()) {
 }
 ```
 
-:::
-
 ---
-
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
 
 If a function is called, but an argument is not provided, then the corresponding value becomes `undefined`.
 
 For instance, the aforementioned function `showMessage(from, text)` can be called with a single argument: `showMessage("Ann");`
 
 That’s not an error. Such a call would output `"*Ann*: undefined"`. As the value for text isn’t passed, it becomes undefined.
-
-\columnbreak
 
 We can specify the so-called “default” (to use if omitted) value for a parameter in the function declaration, using `=`
 
@@ -619,13 +594,9 @@ function showMessage(from, text = "no text given") {
 showMessage("Ann"); // Ann: no text given
 ```
 
-:::
-
 ---
 
 **Default parameters in old JavaScript code**
-
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
 
 In older JS code people used to see a trick like this:
 
@@ -639,8 +610,6 @@ function showMessage(from, text) {
 }
 ```
 
-\columnbreak
-
 They also used the or `||` operator
 
 ```{.js .numberLines}
@@ -652,36 +621,24 @@ function showMessage(from, text) {
 }
 ```
 
-:::
-
 You can also use the *nullish coalescing operator* `??` operator like that `alert(count ?? "unknown");`.
 
 ---
 
 Function return value can also be another function call.
 
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
-
 **If a function does not return a value, it is the same as if it returns `undefined`**
-
-\columnbreak
 
 ```{.js .numberLines}
 function doNothing() { /* empty */ }
 alert( doNothing() === undefined ); // true
 ```
 
-:::
-
 ---
-
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
 
 Never add a newline between `return` and the value because JavaScript assumes a semicolon `;` after `return` So, it effectively becomes an empty `return`.
 
 you can use this workaround
-
-\columnbreak
 
 ```{.js .numberLines}
 return (
@@ -691,15 +648,11 @@ return (
   )
 ```
 
-:::
-
 Functions are actions. So their name is usually a verb. It should be brief, as accurate as possible and describe what the function does, so that someone reading the code gets an indication of what the function does.
 
 It is a widespread practice to start a function with a verbal prefix which vaguely describes the action. There must be an agreement within the team on the meaning of the prefixes.
 
 For instance, functions that start with `show` usually show something.
-
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
 
 Function starting with…
 
@@ -708,8 +661,6 @@ Function starting with…
 - `create…` – create something,
 - `check…` – check something and return a boolean, etc.
 
-\columnbreak
-
 ```{.js .numberLines}
 showMessage(..) // shows a message
 getAge(..)  // returns the age (gets it somehow)
@@ -717,8 +668,6 @@ calcSum(..) // calculates a sum and returns the result
 createForm(..)  // creates a form (and usually returns it)
 checkPermission(..) // checks a permission, returns true/false
 ```
-
-:::
 
 With prefixes in place, a glance at a function name gives an understanding what kind of work it does and what kind of value it returns.
 
@@ -744,8 +693,6 @@ Write a function called capitalize that takes a string and returns that string w
 
 **Strings are immutable**
 
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
-
 ```{.js .numberLines}
 function capitalize(str) {
  str0 = str[0];
@@ -760,8 +707,6 @@ function capitalize(str) {
 console.log(capitalize("mohamed")); // mohamed
 ```
 
-\columnbreak
-
 ```{.js .numberLines}
 function capitalize(str) {
  newStr = str[0].toUpperCase() + str.substring(1, str.length);
@@ -770,8 +715,6 @@ function capitalize(str) {
 console.log(capitalize("mohamed")); // Mohamed
 
 ```
-
-:::
 
 ---
 
@@ -814,11 +757,7 @@ Map function returns A New Array
 
 Side Note: To check if a variable is equal to `NaN` you can use the `isNaN()` function. Don't use `variable === NaN` because it will always return `false` because `NaN` is not equal to itself.
 
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
-
-For example this code will never print `True` to the \linebreak console.
-
-\columnbreak
+For example this code will never print `True` to the console.
 
 ```{.js .numberLines}
 if (Number("a") === Number("a")) {
@@ -826,21 +765,13 @@ if (Number("a") === Number("a")) {
 }
 ```
 
-:::
-
-::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
-
 Instead This code prints:
-
-\columnbreak
 
 ```{.js .numberLines}
 if (isNaN(Number("a")) === isNaN(Number("a"))) {
   console.log("True");  // True
 }
 ```
-
-:::
 
 ---
 
