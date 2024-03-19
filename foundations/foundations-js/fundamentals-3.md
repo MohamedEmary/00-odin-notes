@@ -7,7 +7,7 @@ date: September 7, 2023
 
 The nullish coalescing operator `??` provides a short syntax for selecting a first “defined” variable from the list.
 
-The difference between `||` and `??` is that the `??` checks only for `null` and `undefined`, while the `||` operator also checks for `0`, `false` and `''` (Falsy Values).
+The difference between `||` and `??` is that the `??` checks only for `null` and `undefined`, while the `||` operator also checks for `0`, `false` and `""` (Falsy Values).
 
 *Example:*
 
@@ -26,9 +26,9 @@ console.log(firstName || middleName || lastName || nickName || "Anonymous"); // 
 
 ***Important Note: I have studied this lesson topics (Fundamentals Part 3) from youtube videos not the links provided by The Odin Project***
 
-- How to define and invoke (a fancy word for run, or execute) different kinds of functions.
-- How to use the return value.
-- What function scope is.
+- How to define and invoke (a fancy word for run, or execute) different kinds of functions?
+- How to use the return value?
+- What is the function scope?
 
 In JavaScript, when defining a function, you don't have to write `let` before function parameters because function parameters are treated as variables within the function's scope. Therefore, they don't need to be declared with `let`, `const`, or `var`.
 
@@ -67,9 +67,9 @@ function sum(...numbers1, ...numbers2) {
 - When working with array destructuring - The rest operator can be used to destructure an array and capture the remaining elements in an array.
 
 ```{.js}
-     const [first, ...rest] = [1, 2, 3, 4];
-     first // 1
-     rest // [2, 3, 4]
+     let first = 1;
+     let rest = [2, 3, 4];
+     const [first, ...rest]; // [1, 2, 3, 4]
 ```
 
 - When spreading an array into function arguments - The rest operator spreads an array out into individual arguments when calling a function.
@@ -98,35 +98,51 @@ Named functions show up in stack traces which can help with debugging. Anonymous
 
 Named functions can call themselves recursively. Anonymous functions cannot as they have no internal name to call.
 
-Named functions can be immediately ***invoked*** by adding `()` after their declaration. Anonymous functions must be stored in a variable before being invoked.
+<!-- Named functions can be immediately ***invoked*** by adding `()` after their declaration. -->
+Anonymous functions must be stored in a variable before being invoked, unless they are ***immediately invoked***.
 
-| Use named functions when: | Use anonymous functions when: |
-| --- | --- |
-| You need to recursively call the function or refer to it later in your code. Named functions make recursion and referencing easier.| The function is a throwaway helper that doesn't need recursion, reuse or referencing. |
-|||
-| You want to attach the function to an object as a method. Named functions make it clear what the method name is. | You need to define and invoke a function inline, like in a callback. Or make a function for a specific thing like a click handler. |
-|||
-| Readability is a concern. Named functions are easier to identify in stack traces and when reading code. | You want to define a function inside another function for encapsulation or closure. |
-|||
-| Caching or memoization is needed. Named functions can be stored and reused easily. | The function name is not important in the current context or would not make code clearer. |
-|||
-| | You want to use an anonymous function with higher order functions like `.filter()`, `.map()`, etc. |
+**Immediately Invoked Function Expressions (IIFEs)** are a special case of **anonymous functions** that are invoked as soon as they are defined using `()`.
+
+Example of IIFE:
+
+```{.js .numberLines}
+(function() {
+  console.log("Hello World");
+})();
+```
+
+Table: Anonymous VS Named Functions
+
+| Use **named** functions:                                                                                                                 | Use **anonymous** functions:                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| When you need to recursively call the function or refer to it later in your code. Named functions make recursion and referencing easier. | When the function is a throwaway helper that doesn't need recursion, reuse or referencing.                                              |
+| When you want to attach the function to an object as a method. Named functions make it clear what the method name is.                    | When you need to define and invoke a function inline, like in a callback. Or make a function for a specific thing like a click handler. |
+| When readability is a concern. Named functions are easier to identify in stack traces and when reading code.                             | When you want to define a function inside another function for **encapsulation or closure**.                                            |
+| When caching or **memoization** is needed. Named functions can be stored and reused easily.                                              | When the function name is not important in the current context or would not make code clearer.                                          |
+|                                                                                                                                          | When you want to use an anonymous function with higher order functions like `.filter()`, `.map()`, etc.                                 |
+
+**Memoization** is a programming technique used primarily to speed up computer programs by storing the results of expensive function calls and reusing them when the same inputs occur again.
+
+**Encapsulation** is a concept in Object-Oriented Programming (OOP) where an object's state (data) and behavior (methods) are bundled together. Encapsulation provides a way to protect data from being accessed directly, often by using methods to get or set the data. It's like a protective barrier that prevents the data from being randomly accessed.
+
+**Closure** is a function that has access to its own scope, the outer function's scope, and the global scope. This means that a function defined inside another function has access to the outer function's variables.
 
 Anonymous function can also handle recursive calls if it was given a name but generally that doesn't happen. If you want to have recursion in you function then use named functions not anonymous ones.
 
 *Summary:*
 
-- Named functions have a name and can be called directly. Anonymous functions do not have a bound name.
+<!-- - Named functions have a name and can be called directly. Anonymous functions do not have a bound name. -->
+- Named functions have a name. Anonymous functions do not have a bound name.
 - Named functions are hoisted, anonymous functions are not.
-- Named functions have benefits for recursion, debugging and readability.
-- Use named functions for recursion, reusability and readability.
+- Named functions have benefits for recursion, debugging, reusability, and readability.
 - Use anonymous functions for throwaways that don't require naming.
+<!-- - Use named functions for recursion,  and readability. -->
 
 *Example:*
 
 ```{.js .numberLines}
-console.log(anon_sum_hoisted(1, 2, 3, 4, 5)); // 15
-function anon_sum_hoisted(...numbers) {
+console.log(sum_hoisted(1, 2, 3, 4, 5)); // 15
+function sum_hoisted(...numbers) {
   let total = 0;
   for (let number of numbers) {
     total += number;
@@ -175,8 +191,6 @@ Functions in JavaScript can be nested inside other functions. This is useful for
 
 When nesting functions you can even return the nested function from the outer function. This is called a ***closure***. The nested function will still have access to the outer function's variables even after the outer function has returned.
 
-::::: columns
-::: column
 *Example 1:*
 
 ```{.js .numberLines}
@@ -230,9 +244,6 @@ function sayMessage(fName, lName) {
 console.log(sayMessage("Osama", "Mohamed"));
 ```
 
-:::
-::: column
-
 *Example 4:*
 
 ```{.js .numberLines}
@@ -255,9 +266,6 @@ function get_info(first_name, last_name, birth_year) {
 
 console.log(get_info("Mohamed", "Ahmed", 2010));
 ```
-
-:::
-:::::
 
 \pagebreak
 
@@ -893,5 +901,3 @@ Your reducer function's returned value is assigned to the accumulator, whose val
 **You may also need to try `thisArg` to know what is the different uses of it**
 
 [Solve this again](https://youtu.be/Wn-JbwQLAlA)
-
----
