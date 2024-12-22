@@ -1,5 +1,5 @@
 ---
-title: \huge Advanced Selectors
+title: \huge CSS Selectors
 date: October 26, 2023
 ---
 
@@ -25,9 +25,9 @@ date: October 26, 2023
 
 10. `.parent > .child`: Selects all elements with class `child` that are a direct child of an element with class `parent`.
 
-11. `Element + Other Element => [div + p]`: This selector targets a `p` element that is immediately preceded by a `div` element.
+11. `div + p`: This targets a sibling `p` element that is immediately preceded by a `div` element.
 
-12. `Element ~ Other Elements => [p ~ div]`: This selector targets all `div` elements that are siblings of a `p` element, meaning they share the same parent and are preceded by the `p` element.
+12. `p ~ div`: This targets all `div` elements that are siblings of a `p` element, meaning they share the same parent and are preceded by the `p` element.
 
 13. `[Attribute]`: Selects all elements that have the specified attribute, regardless of its value. For example, `[data-attribute]` selects all elements with a `data-attribute` attribute.
 
@@ -57,42 +57,47 @@ date: October 26, 2023
 
 26. `:not(Selectors)`: Selects elements that do not match the specified selectors. For example, `p:not(.special)` selects all `p` elements that do not have the class `special`.
 
-27. [`:nth-child(n)`](https://css-tricks.com/almanac/selectors/n/nth-child/): Selects the nth child of its parent. The value of `n` can be a number, a keyword, or a formula. For instance, `li:nth-child(2)` selects the second `li` element among its siblings.
+27. `:has(Selectors)`: Selects elements that contain at least one element that matches the specified selectors. For example, `div:has(p)` selects all `div` elements that contain a `p` element.
 
-28. `:nth-last-child(n)`: Similar to `:nth-child(n)`, but counts the children from the end. For example, `div:nth-last-child(3)` selects the third-to-last `div` element among its siblings.
+28. `:contains('text')`: Selects elements that contain the specified text. For example, `p:contains('Hello World')` selects all `p` elements that contain the text `Hello World` like `<p>Hello World</p>`.
 
-29. `:nth-of-type(n)`: Selects the nth child of its parent with a specific type. For example, `p:nth-of-type(odd)` selects all odd-numbered `p` elements among its siblings.
+29. [`:nth-child(n)`](https://css-tricks.com/almanac/selectors/n/nth-child/): Selects the nth child of its parent. The value of `n` can be a number, a keyword, or a formula. For instance, `li:nth-child(2)` selects the second `li` element among its siblings.
 
-30. `:nth-last-of-type(n)`: Similar to `:nth-of-type(n)`, but counts the elements from the end. For instance, `span:nth-last-of-type(4)` selects the fourth-to-last `span` element among its siblings.
+30. `:nth-last-child(n)`: Similar to `:nth-child(n)`, but counts the children from the end. For example, `div:nth-last-child(3)` selects the third-to-last `div` element among its siblings.
 
-31. [`:root`](https://css-tricks.com/almanac/selectors/r/root/): is a special class that represents the very top level of your document - the one element that has no parents. Generally when working with the web, this is equivalent to the html element, but there are a [few subtle differences](https://stackoverflow.com/questions/15899615/whats-the-difference-between-css3s-root-pseudo-class-and-html).
+31. `:nth-of-type(n)`: Selects the nth child of its parent with a specific type. For example, `p:nth-of-type(odd)` selects all odd-numbered `p` elements among its siblings.
+
+32. `:nth-last-of-type(n)`: Similar to `:nth-of-type(n)`, but counts the elements from the end. For instance, `span:nth-last-of-type(4)` selects the fourth-to-last `span` element among its siblings.
+
+33. [`:root`](https://css-tricks.com/almanac/selectors/r/root/): is a special class that represents the very top level of your document - the one element that has no parents. Generally when working with the web, this is equivalent to the html element, but there are a [few subtle differences](https://stackoverflow.com/questions/15899615/whats-the-difference-between-css3s-root-pseudo-class-and-html).
+
     - `:root` is generally the place where you will place your ‘global’ CSS rules that you want available everywhere - such as your custom properties and CSS variables, or rules such as `box-sizing: border-box;`.
 
-32. `:checked`: Selects input elements that are checked, such as checkboxes or radio buttons. It is often used in conjunction with these input types for styling or interaction.
+34. `:checked`: Selects input elements that are checked, such as checkboxes or radio buttons. It is often used in conjunction with these input types for styling or interaction.
 
-33. [`:empty`](https://css-tricks.com/almanac/selectors/e/empty/): Selects elements that have no children, including text nodes and empty spaces. For example, `p:empty` selects all empty `<p>` elements.
+35. [`:empty`](https://css-tricks.com/almanac/selectors/e/empty/): Selects elements that have no children, including text nodes and empty spaces. For example, `p:empty` selects all empty `<p>` elements.
 
-34. `:disabled`: Targets form elements that are disabled. This can include input fields, buttons, or other form elements with the `disabled` attribute.
+36. `:disabled`: Targets form elements that are disabled. This can include input fields, buttons, or other form elements with the `disabled` attribute.
 
-35. `:required`: Selects form elements that are marked as required using the HTML `required` attribute. It's often used to style or apply specific behavior to required form fields.
+37. `:required`: Selects form elements that are marked as required using the HTML `required` attribute. It's often used to style or apply specific behavior to required form fields.
 
-36. [`:focus`](https://css-tricks.com/almanac/selectors/f/focus/): Selects an element that is currently in focus. This is often used to style elements when they are selected by the user.
+38. [`:focus`](https://css-tricks.com/almanac/selectors/f/focus/): Selects an element that is currently in focus. This is often used to style elements when they are selected by the user.
 
-37. `:link` and `:visited` pseudo-classes are used to style links. [`:link`](https://css-tricks.com/almanac/selectors/l/link/) targets links that have not yet been visited, while [`:visited`](https://css-tricks.com/almanac/selectors/v/visited/) targets links that have already been visited.
+39. `:link` and `:visited` pseudo-classes are used to style links. [`:link`](https://css-tricks.com/almanac/selectors/l/link/) targets links that have not yet been visited, while [`:visited`](https://css-tricks.com/almanac/selectors/v/visited/) targets links that have already been visited.
 
-38. [`:hover`](https://css-tricks.com/almanac/selectors/h/hover/) will affect anything under the user’s mouse pointer.
+40. [`:hover`](https://css-tricks.com/almanac/selectors/h/hover/) will affect anything under the user’s mouse pointer.
 
-39. [`:active`](https://css-tricks.com/almanac/selectors/a/active/) applies to elements that are currently being clicked.
+41. [`:active`](https://css-tricks.com/almanac/selectors/a/active/) applies to elements that are currently being clicked.
 
-40. [`::marker`](https://css-tricks.com/almanac/selectors/m/marker/) allows you to customize the styling of your `<li>` elements’ bullets or numbers.
+42. [`::marker`](https://css-tricks.com/almanac/selectors/m/marker/) allows you to customize the styling of your `<li>` elements’ bullets or numbers.
 
-41. [`::selection`](https://css-tricks.com/almanac/selectors/s/selection/): Targets the portion of a document that is currently selected by the user. It is often used to style the background or text color of the selected text. It allows you to change the highlighting when a user selects text on the page.
+43. [`::selection`](https://css-tricks.com/almanac/selectors/s/selection/): Targets the portion of a document that is currently selected by the user. It is often used to style the background or text color of the selected text. It allows you to change the highlighting when a user selects text on the page.
 
-42. `::placeholder`: Targets the placeholder text in an input field. It is often used to style the appearance of the placeholder text.
+44. `::placeholder`: Targets the placeholder text in an input field. It is often used to style the appearance of the placeholder text.
 
-43. [`::first-letter`](https://css-tricks.com/almanac/selectors/f/first-letter/) and [`::first-line`](https://css-tricks.com/almanac/selectors/f/first-line/) allow you to give special styling to the first letter or line of some text.
+45. [`::first-letter`](https://css-tricks.com/almanac/selectors/f/first-letter/) and [`::first-line`](https://css-tricks.com/almanac/selectors/f/first-line/) allow you to give special styling to the first letter or line of some text.
 
-44. `::before` and `::after` allow us to add extra elements onto the page with CSS, instead of HTML. Using it to decorate text in various ways is one common use case
+46. `::before` and `::after` allow us to add extra elements onto the page with CSS, instead of HTML. Using it to decorate text in various ways is one common use case
 
 ---
 
@@ -110,11 +115,11 @@ The [difference between pseudo-classes and pseudo-elements](https://developer.mo
 
 Pseudo-classes share the same specificity as regular classes (0, 0, 1, 0). Read [this article](https://css-tricks.com/specifics-on-css-specificity/) in particular [this part](https://css-tricks.com/specifics-on-css-specificity/#aa-calculating-css-specificity-value).
 
-![Specificity Calculation](image/advanced-selectors/specificity-calculation.png){width=350px}
+![Specificity Calculation](./image/advanced-selectors/specificity-calculation.png){width=350px}
 
 The `:not()` sort-of-pseudo-class adds no specificity by itself, only what’s inside the parenthesis is added to specificity value.
 
-![`:not()` Specificity](image/advanced-selectors/not-specificity.png){width=350px}
+![`:not()` Specificity](./image/advanced-selectors/not-specificity.png){width=350px}
 
 **Important Notes:**
 
